@@ -1,0 +1,101 @@
+<mxfile host="65bd71144e">
+    <diagram id="AYQ0Pvg34ma9C97WjBib" name="ページ1">
+        <mxGraphModel dx="1832" dy="2558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-429" value="user(ユーザー情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-680" y="-680" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-469" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;nickname 　　　　　　　ニックネーム&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;email 　　　　　　　　　アドレス&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;encrypted-password&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;surname 　　　　　　　　姓 漢字&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;name&amp;nbsp; 　　　　　　　　　名 漢字&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;surnamek 　　　　　　　&amp;nbsp; 姓 カナ&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;namek 　　　　　　　　&amp;nbsp; &amp;nbsp;名 カナ&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(42, 37, 47);&quot;&gt;&lt;div style=&quot;&quot;&gt;birthday 　　　　　　　　 生年月日&lt;/div&gt;&lt;div style=&quot;&quot;&gt;tesm_id 　　　　　　　　&amp;nbsp; 外部キー&lt;/div&gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-429">
+                    <mxGeometry y="30" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-433" value="team(チーム情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="-680" width="290" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-473" value="name&amp;nbsp; 　　　　　　　　　　チーム名&lt;br&gt;representative 　　　　　　&amp;nbsp; 代表者&lt;br&gt;area_id&amp;nbsp; &amp;nbsp;　　　　　　　　　活動地域(都道府県)&lt;br&gt;usert_id 　　　　　　　　　 外部キー&lt;br&gt;&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-433">
+                    <mxGeometry y="30" width="290" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-438" value="calender(スケジュール情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-690" y="-1190" width="240" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-477" value="year_id 　　　&amp;nbsp; &amp;nbsp;年&lt;br&gt;month_id　　&amp;nbsp; &amp;nbsp; 月&lt;br&gt;day_id　　　&amp;nbsp; &amp;nbsp; &amp;nbsp;日&lt;br&gt;time_id 　　　&amp;nbsp; &amp;nbsp;時間&lt;br&gt;minutes_id&amp;nbsp; 　&amp;nbsp; &amp;nbsp;分&lt;br&gt;text 　　　　&amp;nbsp; &amp;nbsp; &amp;nbsp;予定&lt;br&gt;team_id&amp;nbsp; 　　&amp;nbsp; &amp;nbsp; 外部キー&lt;br&gt;user_id&amp;nbsp; 　　　&amp;nbsp; 外部キー" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-438">
+                    <mxGeometry y="30" width="240" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-442" value="data(試合データ情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-90" y="-1210" width="250" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-481" value="year_id 　　　&amp;nbsp; &amp;nbsp;年&lt;br&gt;month_id　　　 月&lt;br&gt;day_id　&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 日&lt;br&gt;&amp;nbsp;partner　&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;対戦相手&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;score&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;　　　　&amp;nbsp; スコア&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;team_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 外部キー&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;user_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;外部キー&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-442">
+                    <mxGeometry y="30" width="250" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-446" value="game(練習試合募集情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="-360" width="280" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-475" value="year_id 　　　　　　 年&lt;br&gt;month_id　&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;月&lt;br&gt;day_id　　　　　　　日&lt;br&gt;time_id 　　　　　　 時間&lt;br&gt;minutes_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 分&lt;br&gt;place　　　　　　　&amp;nbsp; 場所&lt;br&gt;text　　　　　　　　 備考&lt;br&gt;team_id　　　　　　 外部キー" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-446">
+                    <mxGeometry y="30" width="280" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-450" value="comment(コメント情報)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-670" y="-400" width="240" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-476" value="text&amp;nbsp; 　　　　　　　コメント欄&lt;br&gt;team_id&amp;nbsp; 　　　　　外部キー&lt;br&gt;user_id 　　　　　&amp;nbsp; 外部キー&lt;br&gt;game_id 　　　　　外部キー&lt;br&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EFvc-0R2Grmw_n8zbquN-450">
+                    <mxGeometry y="30" width="240" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-457" value="" style="endArrow=ERmany;startArrow=ERmany;html=1;strokeWidth=1;startSize=0;endSize=20;sourcePerimeterSpacing=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=0;startFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-433" target="EFvc-0R2Grmw_n8zbquN-446">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-350" y="-440" as="sourcePoint"/>
+                        <mxPoint x="-240" y="-490" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-458" value="" style="endArrow=ERmany;startArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=0;sourcePerimeterSpacing=0;exitX=0.512;exitY=1.048;exitDx=0;exitDy=0;endFill=0;startFill=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-481" target="EFvc-0R2Grmw_n8zbquN-433">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="5.839999999999918" y="-865.77" as="sourcePoint"/>
+                        <mxPoint x="-361" y="-280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-459" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=6;endSize=20;sourcePerimeterSpacing=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-446" target="EFvc-0R2Grmw_n8zbquN-450">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-440" y="-200" as="sourcePoint"/>
+                        <mxPoint x="-420" y="-230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-460" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=6;endSize=20;sourcePerimeterSpacing=0;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="EFvc-0R2Grmw_n8zbquN-450">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-80" y="-560" as="sourcePoint"/>
+                        <mxPoint x="-660" y="-260" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-463" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=20;sourcePerimeterSpacing=0;entryX=0.446;entryY=0.002;entryDx=0;entryDy=0;exitX=0.483;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;entryPerimeter=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-469" target="EFvc-0R2Grmw_n8zbquN-450">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-690.9100000000001" y="-447.99" as="sourcePoint"/>
+                        <mxPoint x="-240" y="-370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-465" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=20;sourcePerimeterSpacing=0;exitX=0.327;exitY=-0.039;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;entryX=0.793;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-433" target="EFvc-0R2Grmw_n8zbquN-477">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-540" y="-630" as="sourcePoint"/>
+                        <mxPoint x="-430" y="-910" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-466" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=20;sourcePerimeterSpacing=0;exitX=0.446;exitY=-0.048;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;entryX=0.45;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-429" target="EFvc-0R2Grmw_n8zbquN-477">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-478.84000000000003" y="-546.69" as="sourcePoint"/>
+                        <mxPoint x="-540" y="-870" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-482" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=20;sourcePerimeterSpacing=0;exitX=0.705;exitY=-0.031;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-429">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-270" y="-650" as="sourcePoint"/>
+                        <mxPoint x="-23" y="-1077" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="EFvc-0R2Grmw_n8zbquN-483" value="" style="endArrow=ERmany;html=1;strokeWidth=1;startSize=20;endSize=20;sourcePerimeterSpacing=0;entryX=1.006;entryY=0.356;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.007;exitY=0.541;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;" edge="1" parent="1" source="EFvc-0R2Grmw_n8zbquN-473" target="EFvc-0R2Grmw_n8zbquN-469">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-270" y="-650" as="sourcePoint"/>
+                        <mxPoint x="-220" y="-700" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
