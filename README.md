@@ -22,3 +22,52 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+#テーブル設計
+
+## usersテーブル
+
+| Column     | Type        | Option         |
+| ---------- | ---------   | -------------- |
+| nickname   | string      | null: false    |
+| email      | string      | null: false, unique:true | ユニーク制約
+| encrypted_password  | string    | null: false    | 
+| surname    | string      | null: false    |
+| name       | string      | null: false    |
+| surnamek   | string      | null: false    |
+| namek      | string      | null: false    |
+| birthday   | date        | null: false    |
+
+### Association
+
+- has_many :user_teams
+- has_many :teams, through: :user_teams
+
+
+## user_teamsテーブル 中間テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| team   | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belong_to :teams
+- belong_to :user
+
+
+## teamsテーブル
+
+| Column     | Type        | Option         |
+| ---------- | ---------   | -------------- |
+| team-name  | string      | null: false    |
+| name       | string      | null: false    |  
+| area_id    | integer     | null: false   |
+
+
+### Association
+ - has_many :users, through: :user_teams
