@@ -15,10 +15,10 @@ class TeamsController < ApplicationController
 
 
   def create
-    
+
     @team = Team.new(team_params)
     @team.owner_id = current_user.id
-    ##@team.users << current_user
+    @team.users << current_user
 
     ##@team.usersにcurrent_userを追加しているということ
     
