@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+
+
+<h1>サッカーチーム管理アプリ</h1>
+
+<div class="team-new">
+    <div><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
+</div>
+
+<div class="team">
+  <div>チーム一覧</div>
+  <tr>
+    <%@team.each do |team|%>
+    <td><%= link_to team.team_name, team_path(team) %></td>
+   
+    <% end %>
+  </tr>
+</div>

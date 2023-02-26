@@ -64,10 +64,12 @@ Things you may want to cover:
 
 | Column     | Type        | Option         |
 | ---------- | ---------   | -------------- |
-| team-name  | string      | null: false    |
+| team_name  | string      | null: false    |
 | name       | string      | null: false    |  
 | area_id    | integer     | null: false   |
 
 
 ### Association
- - has_many :users, through: :user_teams
+
+- has_many :user_teams
+- has_many :users, through: :user_teams

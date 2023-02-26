@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_23_035523) do
+ActiveRecord::Schema.define(version: 2023_02_25_011215) do
+
+  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "team_name", null: false
+    t.string "name", null: false
+    t.integer "area_id", null: false
+    t.integer "owner_id", null: false
+  end
+
+  create_table "user_teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.index ["team_id"], name: "index_user_teams_on_team_id"
+    t.index ["user_id"], name: "index_user_teams_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +48,6 @@ ActiveRecord::Schema.define(version: 2023_02_23_035523) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_teams", "teams"
+  add_foreign_key "user_teams", "users"
 end

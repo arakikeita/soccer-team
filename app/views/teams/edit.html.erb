@@ -1,0 +1,39 @@
+<%= form_with model: @team,  class: 'new-team-main',local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        チーム情報入力
+      </h1>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">チーム名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :team_name, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">代表者名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :name, class:"input-default", id:"name", placeholder:"" %>
+    </div>
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class='login-btn'>
+      <%= f.submit "チーム作成" ,class:"login-red-btn" %>
+    </div>
+  </div>
+
+
+
+
+<% end %>
