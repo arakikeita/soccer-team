@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :teams, through: :user_teams
+  has_many :teams, through: :user_teams, dependent: :destroy
   has_many :user_teams
 
   validates :nickname, presence: true

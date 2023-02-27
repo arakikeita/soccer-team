@@ -15,10 +15,12 @@
           <td>
               <% if @team.owner_id == current_user.id %>
                 <%= link_to 'Edit', edit_team_path(@team), class: "btn btn-sm btn-success" %>
+                <%= link_to '勉強会削除',team_all_destroy_path(@team),method: :delete,data: { confirm: '本当に削除しますか？' } ,
+                class: "btn btn-sm btn-outline-danger" %>```
               <% elsif @team.users.include?(current_user) %>
-                <%= link_to 'チームに参加する', team_path(@team), method: :delete, class: "btn btn-sm btn-danger" %>
+                <%= link_to 'チームを退会する', team_path(@team), method: :delete, class: "btn btn-sm btn-danger" %>
               <% else %>
-                <%= link_to 'チームを離脱する', team_join_path(@team), class: "btn btn-sm btn-success" %>
+                <%= link_to 'チームに参加する', team_join_path(@team), class: "btn btn-sm btn-success" %>
               <% end %>
         </tr>
       </table>

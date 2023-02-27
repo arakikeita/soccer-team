@@ -41,6 +41,7 @@ class TeamsController < ApplicationController
   end
 
   def update
+    @team = Team.find(params[:id])
     if @team.update(team_params)
       redirect_to action: :index
     else
@@ -58,6 +59,13 @@ class TeamsController < ApplicationController
     ##current_userは、@team.userから消されると記述
     @team.users.delete(current_user)
     redirect_to teams_path
+  end
+
+  def all_destroy
+    @team = Team.find(params[:team_id])
+    if @team.destroy
+    redirect_to teams_path
+    end
   end
 
   private
