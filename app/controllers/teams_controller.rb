@@ -63,7 +63,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:team_name, :name, :area_id, :owner_id, user_ids: [])
+    params.require(:team).permit(:team_name, :name, :area_id, :owner_id, user_ids: [], :image)
   end
 
   def ensure_correct_user
