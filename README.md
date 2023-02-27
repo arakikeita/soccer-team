@@ -62,13 +62,13 @@ Things you may want to cover:
 
 ## teamsテーブル
 
-| Column     | Type        | Option         |
-| ---------- | ---------   | -------------- |
-| team_name  | string      | null: false    |
-| name       | string      | null: false    |
-| text       | string      | null: false    |    
-| area_id    | integer     | null: false    |
-| owner_id    | integer    | null: false    |
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |
+| team_name    | string      | null: false    |
+| name         | string      | null: false    |
+| introduction | string      | null: false    |    
+| area_id      | integer     | null: false    |
+| owner_id     | integer     | null: false    |
 
 
 ### Association

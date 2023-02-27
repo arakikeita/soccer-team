@@ -8,12 +8,15 @@
     <div><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
 </div>
 
-<div class="team">
-  <div>チーム一覧</div>
-  <tr>
-    <%@team.each do |team|%>
-    <td><%= image_tag team.image, class: 'team-image' if team.image.attached? %></td>
-   <td><%= link_to team.team_name, team_path(team) %></td>
-    <% end %>
-  </tr>
-</div>
+<% if user_signed_in? %>
+  <div class="team">
+    <div>チーム一覧</div>
+    <tr>
+      <%@team.each do |team|%>
+      <td><%= image_tag team.image, class: 'team-image' if team.image.attached? %></td>
+      <td><%= link_to team.team_name, team_path(team) %></td>
+      <td><%= team.users.count %></td>
+      <% end %>
+    </tr>
+  </div>
+<% end %>

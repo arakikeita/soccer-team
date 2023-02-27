@@ -9,6 +9,6 @@ class Team < ApplicationRecord
   belongs_to :area
 
   validates :area_id, numericality: { other_than: 1}
-  validates :team_name, :name, :introduction, presence: true
+  validates :team_name, :name, :introduction,:owner_id, presence: true
 
 end
