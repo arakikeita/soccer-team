@@ -14,18 +14,34 @@
       <%= flash[:alert] %>
     </div>
     <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">チーム名</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :team_name, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+        <div class='form-text-wrap'>
+          <label class="form-image">
+              <span class="image-file">画像</span>
+              <%=f.file_field :image, class: 'hidden' %>
+          </label>
+        </div>
+
+        <div class='form-text-wrap'>
+          <label class="form-text">チーム名</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :team_name, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+   
+      
+        <div class='form-text-wrap'>
+          <label class="form-text">代表者名</label>
+          <span class="indispensable">必須</span>
+        </div>
+         <%= f.text_field :name, class:"input-default", id:"name", placeholder:"" %>
+
+        <div class='form-text-wrap'>
+          <label class="form-text">紹介文</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :introduction , class:"input-default", id:"introduction", placeholder:"", autofocus: true %>
     </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">代表者名</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :name, class:"input-default", id:"name", placeholder:"" %>
+
+     
     </div>
     <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"genre-select"}) %>
     <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
