@@ -65,8 +65,10 @@ Things you may want to cover:
 | Column     | Type        | Option         |
 | ---------- | ---------   | -------------- |
 | team_name  | string      | null: false    |
-| name       | string      | null: false    |  
-| area_id    | integer     | null: false   |
+| name       | string      | null: false    |
+| text       | string      | null: false    |    
+| area_id    | integer     | null: false    |
+| owner_id    | integer    | null: false    |
 
 
 ### Association

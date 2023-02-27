@@ -18,7 +18,7 @@ class TeamsController < ApplicationController
 
     @team = Team.new(team_params)
     @team.owner_id = current_user.id
-    @team.users << current_user
+    ##@team.users << current_user
 
     ##@team.usersにcurrent_userを追加しているということ
     
@@ -30,7 +30,7 @@ class TeamsController < ApplicationController
   end
 
   def join
-    @team = Team.find(params[:id])
+    @team = Team.find(params[:team_id])
     @team.users << current_user
     redirect_to action: :index
   end
@@ -56,7 +56,7 @@ class TeamsController < ApplicationController
   def destroy
     @team = Team.find(params[:id])
     ##current_userは、@team.userから消されると記述
-    @team.users.delet(current_user)
+    @team.users.delete(current_user)
     redirect_to teams_path
   end
 
