@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :teams, through: :user_teams, dependent: :destroy
   has_many :user_teams
+  has_many :calenders
+  has_many :owned_teams, class_name: "Team"
 
   validates :nickname, presence: true
 

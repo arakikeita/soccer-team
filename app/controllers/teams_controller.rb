@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
 
   def create
 
-    @team = Team.new(team_params)
+    @team = current_user.owned_teams.new(team_params)
     @team.owner_id = current_user.id
     ##@team.users << current_user
 
@@ -67,6 +67,14 @@ class TeamsController < ApplicationController
     redirect_to teams_path
     end
   end
+
+  def main_index
+    @team = Team.find(params[:team_id])
+  end
+
+
+
+
 
   private
 

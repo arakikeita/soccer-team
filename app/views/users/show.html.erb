@@ -1,0 +1,8 @@
+<div class="profile">
+  <%= @user.nickname %>
+  <% @user.user_teams.each do |team| %>
+    <div class="content_post">
+      <%= team.team.team_name %>
+    </div>
+  <% end %>
+</div>

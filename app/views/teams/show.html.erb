@@ -3,7 +3,7 @@
       <table class='table table-hover table-inverse'>
         <tr>
           <td><%= image_tag @team.image, class: 'team-image' if @team.image.attached? %></td>
-          <td><%= @team.team_name %></td>
+          <td><%=link_to @team.team_name, team_main_path(@team) %></td>
           <td><%= @team.name %></td>
           <td><%= @team.area_id %></td>
           <td>
@@ -22,6 +22,7 @@
               <% else %>
                 <%= link_to 'チームに参加する', team_join_path(@team), class: "btn btn-sm btn-success" %>
               <% end %>
+          </td>
         </tr>
       </table>
     </div>

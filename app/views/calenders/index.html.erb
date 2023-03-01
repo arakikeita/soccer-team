@@ -1,0 +1,5 @@
+
+<%= link_to 'イベント追加', new_calender_path %> #←link_to追記
+<%= month_calendar calenders: @calender do |date, calenders| %>
+  <%= date.day %>
+<% end %>

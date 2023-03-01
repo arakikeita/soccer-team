@@ -8,6 +8,7 @@ class CreateTeams < ActiveRecord::Migration[6.0]
       t.text       :introduction          , null: false
       t.integer    :area_id       , null: false
       t.integer    :owner_id      , null: false
+      t.references :user          ,foreign_key: true
      
     end
   end

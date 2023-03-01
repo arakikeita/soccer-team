@@ -75,3 +75,19 @@ Things you may want to cover:
 
 - has_many :user_teams
 - has_many :users, through: :user_teams
+- has_many :calenders
+
+
+## calenderテーブル
+
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |
+| title        | string      | null: false    |
+| content      | text        | null: false    |
+| start_time   | datetime    | null: false    |    
+
+### Association
+
+- belongs_to :team
+
+
