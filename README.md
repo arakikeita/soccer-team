@@ -44,6 +44,7 @@ Things you may want to cover:
 
 - has_many :user_teams
 - has_many :teams, through: :user_teams
+- has_many :owned_teams, class_name: "Team"
 
 
 ## user_teamsテーブル 中間テーブル
@@ -69,13 +70,14 @@ Things you may want to cover:
 | introduction | string      | null: false    |    
 | area_id      | integer     | null: false    |
 | owner_id     | integer     | null: false    |
-
+| user         | references  | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :user_teams
 - has_many :users, through: :user_teams
 - has_many :calenders
+- belongs_to :user
 
 
 ## calenderテーブル
@@ -85,7 +87,8 @@ Things you may want to cover:
 | title        | string      | null: false    |
 | content      | text        | null: false    |
 | start_time   | datetime    | null: false    |    
-
+| user         | references  | null: false, foreign_key: true |
+| team         | references  | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :team
