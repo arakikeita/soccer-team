@@ -1,6 +1,6 @@
 class CalendersController < ApplicationController
   def index
-    @calender = Calender.all
+    @calenders = Calender.all
   end
 
   def new 
@@ -16,23 +16,10 @@ class CalendersController < ApplicationController
     end
   end
 
-
-
-
-
   private
 
   def calender_params
     params.require(:calender).permit(:title, :content, :start_time).merge(user_id: current_user.id,team_id: params[:team_id])
   end
-
-
-
-
-
-
-
-
-
 
 end

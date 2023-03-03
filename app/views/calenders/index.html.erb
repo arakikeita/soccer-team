@@ -1,11 +1,20 @@
 
 <%= link_to 'イベント追加', new_calender_path %> #←link_to追記
-<%= month_calendar calenders: @calender do |date, calenders| %>
-  <%= date.day %>
-  
-  <% calenders.each do |calender| %>
-    <div>
-      <%= calender.title %>
-    </div>
+
+  <%= month_calendar calenders: @calenders do |date, calender| %>
+    <%= date.day %>
+      
+    <% calender.each do |calender| %>
+      <div>
+        <%= calender.title %>
+      </div>
+    <% end %> 
   <% end %>
-<% end %>
+
+
+
+
+
+
+
+  
