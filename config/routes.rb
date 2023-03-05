@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :calenders
+  resources :games
 end

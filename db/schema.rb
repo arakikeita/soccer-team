@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_01_015035) do
+ActiveRecord::Schema.define(version: 2023_03_03_040443) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,32 @@ ActiveRecord::Schema.define(version: 2023_03_01_015035) do
     t.bigint "team_id"
     t.index ["team_id"], name: "index_calenders_on_team_id"
     t.index ["user_id"], name: "index_calenders_on_user_id"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_comments_on_game_id"
+    t.index ["team_id"], name: "index_comments_on_team_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title", null: false
+    t.string "team_name", null: false
+    t.string "name", null: false
+    t.string "place", null: false
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.index ["team_id"], name: "index_games_on_team_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,6 +113,11 @@ ActiveRecord::Schema.define(version: 2023_03_01_015035) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "calenders", "teams"
   add_foreign_key "calenders", "users"
+  add_foreign_key "comments", "games"
+  add_foreign_key "comments", "teams"
+  add_foreign_key "comments", "users"
+  add_foreign_key "games", "teams"
+  add_foreign_key "games", "users"
   add_foreign_key "teams", "users"
   add_foreign_key "user_teams", "teams"
   add_foreign_key "user_teams", "users"

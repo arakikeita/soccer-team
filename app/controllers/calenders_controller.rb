@@ -1,6 +1,6 @@
 class CalendersController < ApplicationController
   def index
-    @calenders = Calender.all
+    @events = Calender.all
   end
 
   def new 

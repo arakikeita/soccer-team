@@ -45,6 +45,7 @@ Things you may want to cover:
 - has_many :user_teams
 - has_many :teams, through: :user_teams
 - has_many :owned_teams, class_name: "Team"
+- has_many :games
 
 
 ## user_teamsテーブル 中間テーブル
@@ -78,6 +79,7 @@ Things you may want to cover:
 - has_many :users, through: :user_teams
 - has_many :calenders
 - belongs_to :user
+- has_many :games
 
 
 ## calenderテーブル
@@ -89,8 +91,43 @@ Things you may want to cover:
 | start_time   | datetime    | null: false    |    
 | user         | references  | null: false, foreign_key: true |
 | team         | references  | null: false, foreign_key: true |
+
 ### Association
 
 - belongs_to :team
 
+
+## gamesテーブル
+
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |
+| title        | string      | null: false    |
+| team_name    | string      | null: false    |
+| name         | string      | null: false    |
+| place        | string      | null: false    |  
+| content      | text        | null: false    |  
+| user         | references  | null: false, foreign_key: true |
+| team         | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :team
+- belongs_to :user
+- has_many :comments
+
+
+## commentsテーブル
+
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |
+| content      | text        | null: false    |  
+| user         | references  | null: false, foreign_key: true |
+| team         | references  | null: false, foreign_key: true |
+| game         | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :team
+- belongs_to :user
+- belongs_to :game
 
