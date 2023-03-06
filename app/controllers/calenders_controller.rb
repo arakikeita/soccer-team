@@ -1,7 +1,7 @@
 class CalendersController < ApplicationController
   before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update,:show, :destroy]
   before_action :set_calender,only: [:show, :edit,:update, :destroy]
-  
+  before_action :moves_to_index, only: [:show]
 
 
 
@@ -52,7 +52,7 @@ class CalendersController < ApplicationController
 
 
   def set_calender
-    @item = Calender.find(params[:id])
+    @calender = Calender.find(params[:id])
   end
 
 
