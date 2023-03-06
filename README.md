@@ -46,6 +46,8 @@ Things you may want to cover:
 - has_many :teams, through: :user_teams
 - has_many :owned_teams, class_name: "Team"
 - has_many :games
+- has_many :attends
+
 
 
 ## user_teamsテーブル 中間テーブル
@@ -82,6 +84,21 @@ Things you may want to cover:
 - has_many :games
 
 
+## attendsテーブル
+
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |  
+| attend_id    | integer     | null: false    |
+| calender     | references  | null: false, foreign_key: true |
+| user         | references  | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :calender
+
+
+
+
 ## calenderテーブル
 
 | Column       | Type        | Option         |
@@ -95,6 +112,8 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :team
+- belongs_to :user
+- has_many :attends
 
 
 ## gamesテーブル
