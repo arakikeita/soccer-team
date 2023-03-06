@@ -1,4 +1,6 @@
 class CalendersController < ApplicationController
+  before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update,:show, :destroy]
+  
   def index
     @events = Calender.all
   end
@@ -17,15 +19,15 @@ class CalendersController < ApplicationController
   end
 
   def show
-   @calender = Calender.find(params[:id])
+   
   end
 
   def edit
-    @calender = Calender.find(params[:id])
+   
   end
 
   def update
-    @calender = Calender.find(params[:id])
+   
     if @calender.update(calender_params)
       redirect_to action: :index
     else
@@ -34,8 +36,6 @@ class CalendersController < ApplicationController
   end
 
   def destroy
-    @calender = Calender.find(params[:id])
-    ##current_userは、@team.userから消されると記述
     @calender.delete
     redirect_to teams_path
   end
@@ -44,6 +44,18 @@ class CalendersController < ApplicationController
 
   def calender_params
     params.require(:calender).permit(:title, :content, :start_time).merge(user_id: current_user.id,team_id: params[:team_id])
+  end
+
+
+  def set_calender
+    @item = Calender.find(params[:id])
+  end
+
+
+  def moves_to_index
+    unless UserTeam.exists?(team_id: @calender.team_id, user_id: current_user.id)
+      redirect_to action: :index
+    end
   end
 
 end
