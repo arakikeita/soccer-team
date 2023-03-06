@@ -1,0 +1,19 @@
+ <div class='col-md-8 offset-md-1'>
+      <h2>予定詳細</h2>
+      <table class='table table-hover table-inverse'>
+        <tr>
+          <td><%= @calender.team.team_name %></td>
+          <td><%= @calender.title %></td>
+          <td><%= @calender.content %></td>
+         
+          
+          <td>
+              <%## if @team.owner_id == current_user.id %>
+                <%= link_to 'Edit', edit_calender_path(@calender), class: "btn btn-sm btn-success" %>
+                <%= link_to '削除',calender_path(@calender),method: :delete,data: { confirm: '本当に削除しますか？' } ,
+                class: "btn btn-sm btn-outline-danger" %>```
+              <%## end %>
+          </td>
+        </tr>
+      </table>
+    </div>

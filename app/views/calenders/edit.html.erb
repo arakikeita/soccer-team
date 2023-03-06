@@ -1,0 +1,45 @@
+<%= form_with model: @calender,  class: 'new-team-main',local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        スケジュール入力
+      </h1>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text"><%= @calender.team.team_name %></label>
+      </div>
+      <input name="team_id" type="hidden" value=<%= @calender.team_id %>>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">タイトル</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :title, class:"input-default", id:"title", placeholder:"", autofocus: true %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">詳細</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :content, class:"input-default", id:"name", placeholder:"" %>
+    </div>
+
+    <div class='login-btn'>
+      <%= f.submit "スケジュール作成" ,class:"login-red-btn" %>
+    </div>
+  </div>
+
+
+
+
+<% end %>

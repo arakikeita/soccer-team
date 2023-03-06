@@ -16,6 +16,30 @@ class CalendersController < ApplicationController
     end
   end
 
+  def show
+   @calender = Calender.find(params[:id])
+  end
+
+  def edit
+    @calender = Calender.find(params[:id])
+  end
+
+  def update
+    @calender = Calender.find(params[:id])
+    if @calender.update(calender_params)
+      redirect_to action: :index
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @calender = Calender.find(params[:id])
+    ##current_userは、@team.userから消されると記述
+    @calender.delete
+    redirect_to teams_path
+  end
+
   private
 
   def calender_params
