@@ -5,10 +5,14 @@
     <%= date.day %>
       
     <% events.each do |event| %>
-      <div>
-        <%= link_to event.title, calender_path(event) %>
-      </div>
-    <% end %> 
+      <% if user_signed_in? %>
+          <% if  UserTeam.exists?(team_id: event.team_id, user_id: current_user.id)%>
+            <div>
+              <%= link_to event.title, calender_path(event) %>
+            </div>
+          <% end %>
+        <% end %> 
+    <% end %>
   <% end %>
 
 
