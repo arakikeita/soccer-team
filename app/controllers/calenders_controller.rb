@@ -2,6 +2,9 @@ class CalendersController < ApplicationController
   before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update,:show, :destroy]
   before_action :set_calender,only: [:show, :edit,:update, :destroy]
   before_action :moves_to_index, only: [:show]
+  before_action :move_to_index, only: [:edit,:destroy]
+
+
 
 
 
@@ -58,6 +61,12 @@ class CalendersController < ApplicationController
 
   def moves_to_index
     unless UserTeam.exists?(team_id: @calender.team_id, user_id: current_user.id)
+      redirect_to action: :index
+    end
+  end
+
+  def move_to_index
+    unless current_user.id == @calender.user_id
       redirect_to action: :index
     end
   end
