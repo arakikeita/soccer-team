@@ -1,6 +1,10 @@
 class CalendersController < ApplicationController
   before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update,:show, :destroy]
+  before_action :set_calender,only: [:show, :edit,:update, :destroy]
   
+
+
+
   def index
     @events = Calender.all
   end
