@@ -16,4 +16,21 @@
           </td>
         </tr>
       </table>
+
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@calender, @attend], local: true) do |form| %>
+      <%= form.collection_select(:attendance_id, Attendance.all, :id, :name,{}) %>
+      <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      </strong>
+    <% end %>
+  </div>
+
+
+
+
+
     </div>
