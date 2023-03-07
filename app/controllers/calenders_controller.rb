@@ -27,7 +27,7 @@ class CalendersController < ApplicationController
 
   def show
     @attend = Attend.new
-    ##@attends = @calender.attend.includes(:user)
+    @attends = @calender.attends.includes(:user)
   end
 
   def edit

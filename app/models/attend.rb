@@ -8,4 +8,6 @@ class Attend < ApplicationRecord
 
 
   validates :attendance_id, numericality: { other_than: 0}
+  validates :calender_id, uniqueness: { scope: :user } ##一人のユーザーは同じスケジュールに複数保存できない。
+  
 end

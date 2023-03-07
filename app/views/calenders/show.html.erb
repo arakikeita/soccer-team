@@ -28,9 +28,36 @@
       </strong>
     <% end %>
   </div>
-
-
-
-
-
+   <div class="comments">
+      <h4>出欠一覧</h4>
+        <div>出席</div>
+      <% @attends.each do |attend| %>
+        <% if attend.attendance_id == 1 %>
+            <%= attend.user.nickname %>
+            <%= link_to "削除", calender_attend_path(@calender, attend), method: :delete %>
+        <% end %>
+      <% end %>
+      <div>欠席</div>
+      
+        <% @attends.each do |attend| %>
+          <% if attend.attendance_id == 2 %>
+          <p>
+            <%= attend.user.nickname%>
+          </p>
+          <% end %>
+      <% end %>
+      <div>未定</div>
+      <% @attends.each do |attend| %>
+          <% if attend.attendance_id == 3 %>
+          <p>
+            <%= attend.user.nickname%>
+          </p>
+          <% end %>
+      <% end %>
     </div>
+
+
+
+
+
+  

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :calenders do
-    resources :attends, only: :create
+    resources :attends, only: [:create,:destroy]
   end
   resources :games
 end

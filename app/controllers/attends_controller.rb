@@ -5,9 +5,16 @@ class AttendsController < ApplicationController
     redirect_to "/calenders/#{attend.calender_id}"
   end
 
+  def destroy
+    @calender = Calender.find(params[:calender_id])
+    @attend = Attend.find(params[:id])
+    @attend.destroy
+    redirect_to "/calenders/#{@attend.calender_id}"
   
+  end
 
-  private
+
+    private
   def attend_params
   params.require(:attend).permit(:attendance_id).merge(user_id: current_user.id, calender_id: params[:calender_id])
   end
