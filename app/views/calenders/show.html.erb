@@ -34,24 +34,28 @@
       <% @attends.each do |attend| %>
         <% if attend.attendance_id == 1 %>
             <%= attend.user.nickname %>
+            <% if attend.user_id == current_user.id %>
             <%= link_to "削除", calender_attend_path(@calender, attend), method: :delete %>
+            <% end %>
         <% end %>
       <% end %>
       <div>欠席</div>
       
         <% @attends.each do |attend| %>
           <% if attend.attendance_id == 2 %>
-          <p>
             <%= attend.user.nickname%>
-          </p>
+            <% if attend.user_id == current_user.id %>
+            <%= link_to "削除", calender_attend_path(@calender, attend), method: :delete %>
+            <% end %>
           <% end %>
       <% end %>
       <div>未定</div>
       <% @attends.each do |attend| %>
           <% if attend.attendance_id == 3 %>
-          <p>
             <%= attend.user.nickname%>
-          </p>
+            <% if attend.user_id == current_user.id %>
+            <%= link_to "削除", calender_attend_path(@calender, attend), method: :delete %>
+            <% end %>
           <% end %>
       <% end %>
     </div>
