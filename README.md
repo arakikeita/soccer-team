@@ -121,8 +121,8 @@ Things you may want to cover:
 | Column       | Type        | Option         |
 | ----------   | ---------   | -------------- |
 | title        | string      | null: false    |
-| team_name    | string      | null: false    |
-| name         | string      | null: false    |
+| start_time   | datetime    | null: false    |
+| end_time     | datetime    | null: false    |
 | place        | string      | null: false    |  
 | content      | text        | null: false    |  
 | user         | references  | null: false, foreign_key: true |
