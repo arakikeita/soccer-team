@@ -22,7 +22,22 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
 
+  def update
+    @game = Game.find(params[:id])
+    if @game.update(game_params)
+      redirect_to action: :index
+    else
+      render "edit"
+    end
+  end
+
+
+
+  private
 
   def game_params
     params.require(:game).permit(:title, :content, :start_time,:end_time,:place).merge(user_id: current_user.id,team_id: params[:team_id])
