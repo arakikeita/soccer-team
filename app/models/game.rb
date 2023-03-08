@@ -8,6 +8,6 @@ class Game < ApplicationRecord
     has_many :comments
 
 
-
+    validates :title, :start_time, :end_time,:place,:content, presence: true
 
 end
