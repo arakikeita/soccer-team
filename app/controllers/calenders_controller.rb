@@ -48,6 +48,9 @@ class CalendersController < ApplicationController
     redirect_to teams_path
   end
 
+ 
+
+
   private
 
   def calender_params

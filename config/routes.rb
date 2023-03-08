@@ -10,5 +10,10 @@ Rails.application.routes.draw do
   resources :calenders do
     resources :attends, only: [:create,:destroy]
   end
-  resources :games
+  resources :games do
+    collection do
+      get 'search'
+    end
+    resources :comments, only: [:create,:desetroy]
+  end
 end

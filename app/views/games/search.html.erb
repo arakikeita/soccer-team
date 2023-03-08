@@ -4,11 +4,7 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
 
-
-<%= link_to '新規募集', new_game_path, method: :get %>
-
-
-<div class="contents row">
+  <div class="contents row">
   <% @game.each do |game| %>
     <div class="content_post" >
        
@@ -23,6 +19,4 @@
     </div>
   <% end %>
 </div>
-
-
 
