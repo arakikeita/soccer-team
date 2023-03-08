@@ -1,0 +1,23 @@
+ <div class='col-md-8 offset-md-1'>
+      <h2>>練習試合詳細</h2>
+      <table class='table table-hover table-inverse'>
+        <tr>
+          
+          <td><%= @game.title %></td>
+          <td><%= @game.start_time%></td>
+          <td><%= @game.end_time %></td>
+          <td><%= @game.place %></td>
+          <td><%=link_to @game.team.team_name, team_main_path(@game) %></td>
+         
+          
+          <td>
+              <% if @game.user_id == current_user.id %>
+                <%= link_to '編集', edit_game_path(@game), class: "btn btn-sm btn-success" %>
+                <%= link_to '削除',game_path(@game),method: :delete,data: { confirm: '本当に削除しますか？' } ,
+                class: "btn btn-sm btn-outline-danger" %>```
+              <% end %>
+          </td>
+        </tr>
+      </table>
+
+  
