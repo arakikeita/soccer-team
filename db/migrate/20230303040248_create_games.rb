@@ -4,8 +4,8 @@ class CreateGames < ActiveRecord::Migration[6.0]
 
       t.timestamps
       t.string :title, null: false
-      t.string :team_name, null: false
-      t.string :name, null: false
+      t.datetime :start_time, null: false
+      t.datetime :end_time, null: false
       t.string :place ,null: false
       t.text :content, null: false
       t.references :user,  foreign_key: true

@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 2023_03_06_090803) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title", null: false
-    t.string "team_name", null: false
-    t.string "name", null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
     t.string "place", null: false
     t.text "content", null: false
     t.bigint "user_id"
