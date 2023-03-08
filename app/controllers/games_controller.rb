@@ -23,7 +23,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.new
+    @comments = @game.comments.includes(:user)
   end
 
   def edit
