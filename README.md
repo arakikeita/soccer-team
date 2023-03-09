@@ -84,6 +84,22 @@ Things you may want to cover:
 - has_many :games
 
 
+
+## applyテーブル 
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| team   | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belong_to :team
+- belong_to :user
+
+
+
 ## attendsテーブル
 
 | Column       | Type        | Option         |
