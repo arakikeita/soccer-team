@@ -47,6 +47,7 @@ Things you may want to cover:
 - has_many :owned_teams, class_name: "Team"
 - has_many :games
 - has_many :attends
+- has_many :applies
 
 
 
