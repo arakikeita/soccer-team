@@ -82,6 +82,7 @@ Things you may want to cover:
 - has_many :calenders
 - belongs_to :user
 - has_many :games
+- has_many :applies
 
 
 
