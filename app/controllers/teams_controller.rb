@@ -51,9 +51,9 @@ class TeamsController < ApplicationController
 
 
   def show
-
+ 
     @team = Team.find(params[:id])
-
+    @apply = Apply.where(team_id: @team, user_id: current_user.id)
   end
 
   def destroy
