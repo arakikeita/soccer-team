@@ -166,3 +166,18 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :game
 
+
+
+## appliesテーブル
+
+| Column       | Type        | Option         |
+| ----------   | ---------   | -------------- |
+| user         | references  | null: false, foreign_key: true |
+| team         | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :team
+- belongs_to :user
+
+
