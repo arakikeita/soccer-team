@@ -6,13 +6,7 @@ class UserTeamsController < ApplicationController
     redirect_to team_applies_url(@user_team.team), notice:"「#{@user_team.user.nickname}」が、コミュニティ：#{@user_team.team.team_name}へ加入しました。"
   end
 
-  def destroy
-    @user_team = UserTeam.find(params[:id])
-    @user_team.destroy!
-    @team = Team.find(params[:team_id])
-    redirect_to team_url(@team), notice: "コミュニティ「#{@team.team_name}」を退会しました。"    
-  end
-
+  
   private
 
     def user_team_params
