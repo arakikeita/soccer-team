@@ -1,6 +1,7 @@
 <header class='top-page-header'>
-  <h1>サッカー管理アプリ</h1>
-  <div class='nav'>
+ 
+    <h1><%= link_to "MY TEAM", root_path %></h1>
+
     <ul class='lists-right'>
       
       <% if user_signed_in? %>
@@ -13,5 +14,6 @@
       <% end %>
       
     </ul>
-  </div>
+
+
 </header>

@@ -1,34 +1,47 @@
-<%= render "shared/header" %>
-
-
-
-<h1>サッカーチーム管理アプリ</h1>
-
-<div class="team-new">
-    <div><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
-</div>
 
 <% if user_signed_in? %>
-  <div class="team">
-    <div>チーム一覧</div>
-    <tr>
-      <%@team.each do |team|%>
-      <td><%= image_tag team.image, class: 'team-image' if team.image.attached? %></td>
-      <td><%= link_to team.team_name, team_path(team) %></td>
-      <td><%= team.users.count %></td>
-      <% end %>
-    </tr>
+<div class="main">
+    <div class="team-new">
+          <div class="team"><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
+          <div calss="game"><%= link_to '練習試合応募一覧', games_path ,class: "new-game" %></div>
+    </div>
+
+
+
+
+    <div class="all-team">
+      <div class="title">チーム一覧</div>
+      <table class='table table-hover table-inverse'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>グループ名</th>
+            <th>紹介文</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <%@team.each do |team|%>
+            <td><%= image_tag team.image, class: 'team-image' if team.image.attached? %></td>
+            <td><%= link_to team.team_name, team_path(team) %></td>
+            <td><%= team.users.count %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+<% else %>
+
+
+
+  <div class="main">
+    <div class="sign">
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %><
+    </div>
   </div>
 
-   <div class="game">
-    <div>練習試合募集</div>
-    <%= link_to '一覧', games_path %><
-   
-   
-   
-   
-   
-   
-   
-   </div>
+
 <% end %>
+

@@ -1,3 +1,67 @@
+.main{
+  background-color: greenyellow;
+  width:100vw;
+  height:100vh
+}
+
+.team-new{
+  background-color: green;
+  width:100vw;
+  height:50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team{
+  margin-right:30px;
+}
+
+
+.new-team{
+  text-decoration: none;
+  color:#333333;
+}
+
+.new-game{
+  text-decoration: none;
+  color:#333333;
+}
+
+.all-team {
+  background-color:yellow;
+  width:80vw;
+  height:100vh;
+  margin:0 auto;
+}
+
+.title{
+  background-color:pink;
+  width:80vw;
+  height:50px;
+ 
+}
+
+.team-name{
+  display:flex;
+  flex-direction: column;
+  
+}
+
+tr{
+
+}
+
+
+
+
+
+
+
+
+
+
+
 .team-image {
   width: 33vh;
   height: 33vh;
