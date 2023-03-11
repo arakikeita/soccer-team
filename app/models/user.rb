@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :owned_teams, class_name: "Team"
   has_many :teams, through: :user_teams, dependent: :destroy
   has_many :user_teams, dependent: :destroy
   has_many :applies, dependent: :destroy
   has_many :calenders
-  has_many :owned_teams, class_name: "Team"
+ 
   has_many :attends
 
   validates :nickname, presence: true

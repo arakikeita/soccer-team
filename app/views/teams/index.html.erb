@@ -1,4 +1,3 @@
-
 <% if user_signed_in? %>
 <div class="main">
     <div class="team-new">
@@ -8,32 +7,28 @@
 
 
 
-
+    <div class="title">チーム一覧</div>
     <div class="all-team">
-      <div class="title">チーム一覧</div>
-      <table class='table table-hover table-inverse'>
-        <thead>
-          <tr>
-            <th></th>
-            <th>グループ名</th>
-            <th>紹介文</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <%@team.each do |team|%>
-            <td><%= image_tag team.image, class: 'team-image' if team.image.attached? %></td>
-            <td><%= link_to team.team_name, team_path(team) %></td>
-            <td><%= team.users.count %></td>
-            <% end %>
-          </tr>
-        </tbody>
-      </table>
+        <% @team.each do |team| %>
+        <li class='list'>
+          <%= link_to team_path(team.id), method: :get do %>
+            <div class='item-img-content'>
+                <%= image_tag team.image, class: 'team-image' if team.image.attached? %>
+            </div>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= link_to team.team_name, team_path(team) %>
+              </h3>
+              <div class='item-price'>
+                <%= team.users.count %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+        <% end %>
     </div>
 
 <% else %>
-
 
 
   <div class="main">

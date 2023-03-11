@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
 
   def create
-
+   
     @team = current_user.owned_teams.new(team_params)
     @team.owner_id = current_user.id
     ##@team.users << current_user
@@ -81,7 +81,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:team_name, :name, :area_id, :owner_id,:introduction, :image, user_ids: [])
+    params.require(:team).permit(:team_name, :name, :area_id, :owner_id,:introduction, :image).merge(user_id: current_user.id)
   end
 
   def ensure_correct_user
