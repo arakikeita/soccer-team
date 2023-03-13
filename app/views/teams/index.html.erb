@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-<section class="team">
+<section id="team">
   <div class="main">
     <div class="main2">
           <div class="title">
-            <div class="title2">チーム一覧</div>
+            <h1 class="title2">チーム一覧</h1>
           </div>
 
           <div class="all-team">
@@ -11,15 +11,16 @@
               <li class='list'>
                 <%= link_to team_path(team.id), method: :get do %>
                   <div class='item-img-content'>
-                      <%= image_tag team.image, class: 'team-image' if team.image.attached? %>
+                      
+                      <div class="f"><%= image_tag team.image, class: 'team-image' if team.image.attached? %></div>
                   </div>
                   <div class='item-info'>
-                    <h3 class='item-name'>
-                      <%= link_to team.team_name, team_path(team) %>
-                    </h3>
-                    <div class='item-price'>
-                      <%= team.users.count %>
-                    </div>
+                      <div class='item-name'>
+                        <div class="e"><%= link_to "チーム名: #{team.team_name}", team_path(team) %></div>
+                      </div>
+                      <div class='item-price'>
+                        <div class="e"><%= "所属人数: #{team.users.count}人" %></div>
+                      </div>
                   </div>
                 <% end %>
               </li>
