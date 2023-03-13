@@ -1,57 +1,47 @@
 .main{
-  background-color: greenyellow;
+ 
   width:100vw;
   height:auto;
-}
-
-.team-new{
-  background-color: green;
-  width:100vw;
-  height:50px;
   display:flex;
   justify-content: center;
-  align-items: center;
 }
 
-.team{
-  margin-right:30px;
-}
-
-
-.new-team{
-  text-decoration: none;
-  color:#333333;
-}
-
-.new-game{
-  text-decoration: none;
-  color:#333333;
+.main2{
+  width:50vw;
+  height:100%;
 }
 
 .all-team {
-  background-color:yellow;
-  width:80vw;
+
+  width:100%;
   height:auto;
-  margin:0 auto;
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .list{
-  width: 37vh;
+  width: 29%;
   padding: 1vw;
   background-color: #FFF;
   border: solid 1px #333;
+  margin-bottom:5px;
 }
 
 .title{
   background-color:pink;
-  width:80vw;
+  width:100%;
   height:50px;
   margin:0 auto;
   color:#333333; 
- 
+  margin-bottom:5px;
+}
+.title2{
+  line-height: 50px;
+  text-align: center;
+  font-size:30px;
+  border: solid 1px #333;
+  font-weight:bold;
 }
 
 .team-name{
@@ -61,18 +51,7 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 .team-image {
-  width: 33vh;
-  height: 33vh;
+  width: 50%;
+  height: 50%;
 }

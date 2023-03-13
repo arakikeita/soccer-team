@@ -1,20 +1,22 @@
 <header class='top-page-header'>
  
-    <h1><%= link_to "MY TEAM", root_path %></h1>
+    <div class="c">
+      <h1><%= link_to "MY TEAM", root_path %></h1>
 
-    <ul class='lists-right'>
-      
-      <% if user_signed_in? %>
-      <div class="b"><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
-        <div calss="b"><%= link_to '練習試合応募一覧', games_path ,class: "new-game" %></div>
-        <li class="a"><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li> 
-        <li class="a"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>  
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-      
-    </ul>
+      <ul class='lists-right'>
+        
+        <% if user_signed_in? %>
+          <li class="b"><%= link_to 'チーム新規作成', new_team_path, class: "logout" %></li>
+          <li class="b"><%= link_to '練習試合応募一覧', games_path ,class: "logout" %></li>
+          <li class="a"><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li> 
+          <li class="d"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>  
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+        
+      </ul>
+    </div>
 
 
 </header>

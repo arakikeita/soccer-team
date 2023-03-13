@@ -1,42 +1,45 @@
 <% if user_signed_in? %>
-<div class="main">
-    <div class="team-new">
-          <div class="team"><%= link_to 'チーム新規作成', new_team_path, class: "new-team" %></div>
-          <div calss="game"><%= link_to '練習試合応募一覧', games_path ,class: "new-game" %></div>
-    </div>
-
-
-
-    <div class="title">チーム一覧</div>
-    <div class="all-team">
-        <% @team.each do |team| %>
-        <li class='list'>
-          <%= link_to team_path(team.id), method: :get do %>
-            <div class='item-img-content'>
-                <%= image_tag team.image, class: 'team-image' if team.image.attached? %>
-            </div>
-            <div class='item-info'>
-              <h3 class='item-name'>
-                <%= link_to team.team_name, team_path(team) %>
-              </h3>
-              <div class='item-price'>
-                <%= team.users.count %>
-              </div>
-            </div>
-          <% end %>
-        </li>
-        <% end %>
-    </div>
-
-<% else %>
-
-
+<section class="team">
   <div class="main">
-    <div class="sign">
-      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %><
-    </div>
-  </div>
+    <div class="main2">
+          <div class="title">
+            <div class="title2">チーム一覧</div>
+          </div>
+
+          <div class="all-team">
+              <% @team.each do |team| %>
+              <li class='list'>
+                <%= link_to team_path(team.id), method: :get do %>
+                  <div class='item-img-content'>
+                      <%= image_tag team.image, class: 'team-image' if team.image.attached? %>
+                  </div>
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= link_to team.team_name, team_path(team) %>
+                    </h3>
+                    <div class='item-price'>
+                      <%= team.users.count %>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+              <% end %>
+          </div>
+       </div>
+    <div>
+</section>
+
+    <% else %>
 
 
-<% end %>
+      <div class="main">
+        <div class="main2">
+              <div class="sign">
+                <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %><
+              </div>
+        </div>
+
+      </div>
+    <% end %>
+
 

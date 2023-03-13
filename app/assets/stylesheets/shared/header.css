@@ -3,7 +3,13 @@
 .top-page-header {
   width: 100vw;
   display: flex;
-  justify-content:space-around;
+  justify-content:center;
+
+}
+.c{
+  width:50vw;
+  display: flex;
+  justify-content:space-between;
 }
 
 
@@ -19,14 +25,27 @@ h1 a{
   align-items: center;
 }
 
+.a{
+  text-decoration: none;
+  line-height: 32px;
+  margin:0 1vw  0 2vw ; 
+  color: #333333;
+}
+
+.b{
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 1vw;
+  color: #333333;
+}
+
+
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
   color: #333333;
   font-weight: bold;
 }
-
 
 .logout {
   text-decoration: none;
@@ -36,7 +55,7 @@ h1 a{
 .login {
   text-decoration: none;
   line-height: 32px;
-  margin-right: 3vw;
+  margin-right: 1vw;
   color: #333333;
 }
 
