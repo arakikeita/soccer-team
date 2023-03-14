@@ -133,7 +133,7 @@ Things you may want to cover:
 
 - belongs_to :team
 - belongs_to :user
-- has_many :attends
+- has_many :attends,dependent: :destroy
 
 
 ## gamesテーブル
