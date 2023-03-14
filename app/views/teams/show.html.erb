@@ -1,93 +1,64 @@
-<div class="main">
-  <div class='form-wrap'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
-        チーム詳細
-      </h1>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-          <div class="form-image">
-              <%= image_tag @team.image, class: 'team-image' if @team.image.attached? %>
-          </div>
-      </div>
+  <div class="main">
+    <div class='form-wrap'>
+            <div class='form-header'>
+              <h1 class='form-header-text'>
+                チーム詳細
+              </h1>
+            </div>
 
-      <div class='form-text-wrap'>
-          <label class="form-text">チーム名:</label>
-          <span class="indispensable"><%=link_to @team.team_name, team_main_path(@team) %></span>
-      </div>
 
-      <div class='form-text-wrap'>
-          <label class="form-text">代表者:</label>
-          <span class="indispensable"><%= @team.name %></span>
-      </div>
+            <div class="form-group">
+                  <div class='form-text-wrap'>
+                      <div class="form-image">
+                          <%= image_tag @team.image, class: 'team-image' if @team.image.attached? %>
+                      </div>
+                  </div>
 
-       <div class='form-text-wrap'>
-          <label class="form-text">所属人数:</label>
-          <span class="indispensable"><%= @team.area.name %></span>
-      </div>
-    </div>
+                  <div class='form-text-wrap'>
+                      <label class="form-text">チーム名:</label>
+                      <span class="indispensable"><%=link_to @team.team_name, team_main_path(@team) %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">代表者:</label>
+                      <span class="indispensable"><%= @team.name %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">活動エリア:</label>
+                      <span class="indispensable"><%= @team.area.name %></span>
+                  </div>
+            </div>
 
       <div class='login-btn'>
-     
-              <% if @team.owner_id == current_user.id %>
-                <%= link_to '編集', edit_team_path(@team), class: "login-red-btn" %>
-                <%= link_to '削除',team_all_destroy_path(@team),method: :delete,data: { confirm: '本当に削除しますか？' } ,
-                class: "login-red-btn" %>```
-              <% end %>
-
-                <!-- ログインユーザが当該コミュニティに所属している場合 -->
-              <% if   @team.users.include?(current_user)%>
-                <%= link_to 'チームを退会する', team_path(@team), method: :delete, class: "login-red-btn" %>
-                  <!-- 当該コミュニティには所属していないが、ログインはしている場合 -->
-              <% elsif Apply.exists?(team_id: @team, user_id: current_user.id) %>
-                  <%= link_to '申請取消', team_apply_path(@team, @apply.ids), method: :delete, class: "login-red-btn" %>
-              <% else %>
-                  <%= link_to '加入申請', team_applies_path(@team), method: :post, class: "login-red-btn" %>
-              <% end %>
+          <% if @team.owner_id == current_user.id %>
+             <div class="login-red-btn"><%= link_to '編集', edit_team_path(@team) ,class:"login-red-btn"%></div>
+            <div class="login-red-btn"><%= link_to '削除',team_all_destroy_path(@team),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
+          <% end %>
       </div>
 
+      <div class='login-btn'>
+            <!-- ログインユーザが当該コミュニティに所属している場合 -->
+          <% if   @team.users.include?(current_user) && @team.user_id =! current_user.id%>
+            <%= link_to 'チームを退会する', team_path(@team), method: :delete ,class:"login-red-btn"%>
+          <% end %>
+              <!-- 当該コミュニティには所属していないが、ログインはしている場合 -->
+           <% if Apply.exists?(team_id: @team, user_id: current_user.id)  %>
+              <div class="login-red-btn"><%= link_to '申請取消', team_apply_path(@team, @apply.ids), method: :delete,class:"login-red-btn" %></div>
+          <% else  @team.user_id =! current_user.id %>
+                <div class="login-red-btn1"><%= link_to '加入申請', team_applies_path(@team), method: :post ,class:"login-red-btn1" %></div>
+          <% end %>
+      </div>
 
-
-
-
-
-
-        <tr>
-          <td>
-              <% if @team.owner_id == current_user.id %>
-                <%= link_to '編集', edit_team_path(@team), class: "login-red-btn" %>
-                <%= link_to '削除',team_all_destroy_path(@team),method: :delete,data: { confirm: '本当に削除しますか？' } ,
-                class: "login-red-btn" %>```
-              <% end %>
-
-                <!-- ログインユーザが当該コミュニティに所属している場合 -->
-              <% if   @team.users.include?(current_user)%>
-                <%= link_to 'チームを退会する', team_path(@team), method: :delete, class: "login-red-btn" %>
-                  <!-- 当該コミュニティには所属していないが、ログインはしている場合 -->
-              <% elsif Apply.exists?(team_id: @team, user_id: current_user.id) %>
-                  <%= link_to '申請取消', team_apply_path(@team, @apply.ids), method: :delete, class: "login-red-btn" %>
-              <% else %>
-                  <%= link_to '加入申請', team_applies_path(@team), method: :post, class: "login-red-btn" %>
-              <% end %>
-       
-              
-          </td>
-          <td>
-            <% if @team.user_id == current_user.id %>
-              <%= link_to "承認待ち一覧", team_applies_path(@team), class:"login-red-btn" %>
-            <% end %>
-          </td>
-
-        </tr>
-  
+      <div class='login-btn'>
+           <% if @team.user_id == current_user.id %>
+            <div class="login-red-btn"><%= link_to "承認待ち一覧", team_applies_path(@team),class:"login-red-btn" %></div>
+          <% end %>
+      </div>
     </div>
-  </div>
-    <%# elsif @team.users.include?(current_user) %>
-                <%#= link_to 'チームを退会する', team_path(@team), method: :delete, class: "btn btn-sm btn-danger" %>
-              <%# else %>
-                <%#= link_to 'チームに参加する', team_join_path(@team), class: "btn btn-sm btn-success" %>
-              <%# end %>
-
-
 </div>
+
+
+    
+
+
