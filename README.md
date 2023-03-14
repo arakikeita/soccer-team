@@ -78,13 +78,13 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_teams
-- has_many :users, through: :user_teams
-- has_many :calenders
+- has_many :user_teams,dependent: :destroy
+- has_many :users, through: :user_teams,dependent: :destroy
+- has_many :calenders,dependent: :destroy
 - belongs_to :user
-- has_many :games
-- has_many :applies
-- has_many :comments
+- has_many :games,dependent: :destroy
+- has_many :applies,dependent: :destroy
+- has_many :comments,dependent: :destroy
 - has_one_attached :image
 
 
