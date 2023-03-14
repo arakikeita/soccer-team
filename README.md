@@ -84,6 +84,8 @@ Things you may want to cover:
 - belongs_to :user
 - has_many :games
 - has_many :applies
+- has_many :comments
+- has_one_attached :image
 
 
 
