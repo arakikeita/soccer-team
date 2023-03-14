@@ -1,9 +1,5 @@
-<%= form_with model: @team, url: teams_path, class: 'new-team-main',local: true do |f| %>
+<%= form_with model: @team, url: teams_path, class: 'registration-main',local: true do |f| %>
   <div class='form-wrap'>
-
-   
-   
-   
     <div class='form-header'>
       <h1 class='form-header-text'>
         チーム情報入力
@@ -43,12 +39,16 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :introduction , class:"input-default", id:"introduction", placeholder:"", autofocus: true %>
+
+        <div class="form-text-wrap">
+          <label class="form-text">活動エリア</label>
+          <span class="indispensable">必須</span>
+        </div>
+          <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"input-default"}) %>
+          <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
     </div>
 
-     
-    </div>
-    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"genre-select"}) %>
-    <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    
     <div class='login-btn'>
       <%= f.submit "チーム作成" ,class:"login-red-btn" %>
     </div>

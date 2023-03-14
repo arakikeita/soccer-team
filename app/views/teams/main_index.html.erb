@@ -19,3 +19,11 @@
         </tr>
       </table>
     </div>
+
+
+     
+          <td>
+              <% @team.users.each do |member| %>
+                <%= member.name %><br>
+              <% end %>
+          </td>
