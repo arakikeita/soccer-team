@@ -42,12 +42,13 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_teams
-- has_many :teams, through: :user_teams
+- has_many :user_teams, dependent: :destroy
+- has_many :teams, through: :user_teams, dependent: :destroy
 - has_many :owned_teams, class_name: "Team"
 - has_many :games
-- has_many :attends
+- has_many :attends, dependent: :destroy
 - has_many :applies
+- has_many :calenders
 
 
 

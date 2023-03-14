@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :user_teams, dependent: :destroy
   has_many :applies, dependent: :destroy
   has_many :calenders
- 
   has_many :attends
 
   validates :nickname, presence: true
