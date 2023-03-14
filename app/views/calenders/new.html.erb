@@ -1,33 +1,62 @@
-<h1>テスト</h1>
 
-<%= form_with(model: @calender, local: true) do |form| %>
 
-  <select name="team_id">
-      <option value="">チームを選択してください</option> 
-      <% Team.where(user_id: current_user.id).each do |team| %>
-      <option value=<%=team.id%>><%= team.team_name %></option>
-      <% end %>
-  </select>
- 
+<%= form_with model:  @calender, url: calenders_path, class: 'registration-main',local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        スケジュール作成
+      </h1>
+    </div>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class='form-text-wrap'>
+          <select name="team_id">
+              <option value="">チームを選択してください</option> 
+              <% Team.where(user_id: current_user.id).each do |team| %>
+              <option value=<%=team.id%>><%= team.team_name %></option>
+              <% end %>
+            </select>
+        </div>
+
+        <div class='form-text-wrap'>
+          <label class="form-text">タイトル</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :title, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+   
+        <div class='form-text-wrap'>
+          <label class="form-text">詳細</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :content , class:"input-default", id:"introduction", placeholder:"", autofocus: true %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+            <label class="form-text">開始時間</label>
+            <span class="indispensable">必須</span>
+      </div>
+    </div>
+    <div class='form-time'>
+        <%= f.datetime_select :start_time, class:"input-default", id:"name", placeholder:"" %>
+    </div>
+
+    
+    <div class='login-btn'>
+      <%= f.submit "スケジュール作成" ,class:"login-red-btn" %>
+    </div>
   </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
 
 
-  <div class="submit">
-    <%= form.submit %>
-  </div>
 
 <% end %>

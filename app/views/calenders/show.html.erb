@@ -9,9 +9,9 @@
           
           <td>
               <%## if @team.owner_id == current_user.id %>
-                <%= link_to 'Edit', edit_calender_path(@calender), class: "btn btn-sm btn-success" %>
+                <%= link_to '編集', edit_calender_path(@calender), class: "btn btn-sm btn-success" %>
                 <%= link_to '削除',calender_path(@calender),method: :delete,data: { confirm: '本当に削除しますか？' } ,
-                class: "btn btn-sm btn-outline-danger" %>```
+                class: "btn btn-sm btn-outline-danger" %>
               <%## end %>
           </td>
         </tr>

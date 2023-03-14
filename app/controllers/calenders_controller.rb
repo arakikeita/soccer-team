@@ -64,7 +64,7 @@ class CalendersController < ApplicationController
 
 
   def moves_to_index
-    unless UserTeam.exists?(team_id: @calender.team_id, user_id: current_user.id)
+    unless UserTeam.exists?(team_id: @calender.team_id, user_id: current_user.id) || current_user.id == @calender.user_id
       redirect_to action: :index
     end
   end

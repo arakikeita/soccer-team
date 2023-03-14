@@ -1,29 +1,77 @@
+  <div class="main">
+    <div class='form-wrap'>
+            <div class='form-header'>
+              <h1 class='form-header-text'>
+                チームページ
+              </h1>
+            </div>
 
- 
- 
- <div class='col-md-8 offset-md-1'>
-      <h2>>チームページ</h2>
-      <table class='table table-hover table-inverse'>
-        <tr>
-          <td><%= image_tag @team.image, class: 'team-image' if @team.image.attached? %></td>
-          <td><%= @team.team_name %></td>
-          <td><%= @team.name %></td>
-          <td><%= @team.area_id %></td>
-          <td><%= link_to 'カレンダー', calenders_path %></td>
-          <td>
-              <% @team.users.each do |member| %>
-                <%= member.name %><br>
-              <% end %>
-          </td>
-          
-        </tr>
-      </table>
+
+            <div class="form-group">
+                  <div class='form-text-wrap'>
+                      <div class="form-image">
+                          <%= image_tag @team.image, class: 'team-image' if @team.image.attached? %>
+                      </div>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">チーム名:</label>
+                      <span class="indispensable"><%=link_to @team.team_name, team_main_path(@team) %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">代表者:</label>
+                      <span class="indispensable"><%= @team.name %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">活動エリア:</label>
+                      <span class="indispensable"><%= @team.area.name %></span>
+                  </div>
+
+                   <div class='form-text-wrap'>
+                      <label class="form-text">スケジュール:</label>
+                      <span class="indispensable"><%= link_to 'カレンダー', calenders_path %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">メンバー一覧:</label><br>
+                      <span class="indispensable">
+                        <% @team.users.each do |member| %>
+                          <%= member.nickname %><br>
+                        <% end %>
+                      </span>
+                  </div>
+            </div>
+
+      <div class='login-btn'>
+          <% if @team.owner_id == current_user.id %>
+             <div class="login-red-btn"><%= link_to '編集', edit_team_path(@team) ,class:"login-red-btn"%></div>
+            <div class="login-red-btn"><%= link_to '削除',team_all_destroy_path(@team),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
+          <% end %>
+      </div>
+
+      
+              
+
+
+      <div class='login-btn'>
+          <% if @team.user_id == current_user.id %>
+            <div class="login-red-btn"><%= link_to "承認待ち一覧", team_applies_path(@team),class:"login-red-btn" %></div>
+          <% elsif Apply.exists?(team_id: @team, user_id: current_user.id)  %>
+              <div class="login-red-btn"><%= link_to '申請取消', team_apply_path(@team, @apply.ids), method: :delete,class:"login-red-btn" %></div>
+          <% elsif   @team.users.include?(current_user)%>
+               <div class="login-red-btn"> <%= link_to 'チームを退会する', team_path(@team), method: :delete ,class:"login-red-btn"%></div>
+          <% else %>
+                <div class="login-red-btn1"><%= link_to '加入申請', team_applies_path(@team), method: :post ,class:"login-red-btn1" %></div>
+          <% end %>
+      </div>
+
+   
+        
+
     </div>
+</div>
 
 
-     
-          <td>
-              <% @team.users.each do |member| %>
-                <%= member.name %><br>
-              <% end %>
-          </td>
+    

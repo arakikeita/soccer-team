@@ -1,5 +1,5 @@
 
-<%= link_to 'イベント追加', new_calender_path %> #←link_to追記
+<%= link_to 'スケジュール追加', new_calender_path %> 
 
   <%= month_calendar events: @events do |date, events| %>
     <%= date.day %>
@@ -8,7 +8,7 @@
       <% if user_signed_in? %>
           <%## user_teamsテーブル内にevent.team_idとcurrent_user.idが存在すれば表示される%>
           <%## つまりログインユーザーが所属しているチームのスケジュールのみ表示される。%>
-          <% if  UserTeam.exists?(team_id: event.team_id, user_id: current_user.id)%>
+          <% if  UserTeam.exists?(team_id: event.team_id, user_id: current_user.id) || current_user.id == event.user_id%>
             <div>
               <%= link_to event.title, calender_path(event) %>
             </div>
