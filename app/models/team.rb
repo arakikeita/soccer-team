@@ -4,8 +4,10 @@ class Team < ApplicationRecord
   has_many :users, through: :user_teams,dependent: :destroy
   has_many :applies, dependent: :destroy
   has_one_attached :image
-  has_many :calenders
+  has_many :calenders,dependent: :destroy
   belongs_to :user
+  has_many :games,dependent: :destroy
+  has_many :comments,dependent: :destroy
 
     # ユーザがコミュニティに所属していればtrueを返す
     def user_belonging?(user)
