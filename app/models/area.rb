@@ -20,6 +20,7 @@ class Area < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :teams
+  has_many :games
   
 
 end
