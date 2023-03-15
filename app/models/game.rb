@@ -16,7 +16,7 @@ class Game < ApplicationRecord
 
     def self.search(search)
         if search != ""
-          Game.joins(:team).where('title LIKE(?) OR place LIKE(?) OR start_time LIKE(?) OR team_name LIKE(?) OR area.name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%","%#{search}%")
+          Game.joins(:team).where('title LIKE(?) OR place LIKE(?) OR start_time LIKE(?) OR team_name LIKE(?) ', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
       
          
           
