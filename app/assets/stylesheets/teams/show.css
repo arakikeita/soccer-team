@@ -94,7 +94,47 @@
 }
 
 
+.attends{
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: space-around;
 
+}
+
+
+.attend{
+ 
+  
+}
+
+.attend-num{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom: 15px;
+  text-align: center;
+
+}
+.attend-name{
+  font-weight: none;
+  
+
+  
+}
+.attend-destroy{
+  margin-right:5px;
+
+  
+}
+
+
+.attend-left{
+  display: flex;
+  justify-content: center;
+  margin-top:5px;
+
+}
+  
 
 
 
