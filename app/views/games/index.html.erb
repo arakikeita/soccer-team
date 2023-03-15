@@ -1,75 +1,49 @@
-<h1>練習試合募集一覧</h1>
-  <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
-  <% end %>
-
-
-<%= link_to '新規募集', new_game_path, method: :get %>
-
-
-<div class="contents row">
-  <% @game.each do |game| %>
-    <div class="content_post" >
-       
-
-
-
-
-          <p><%=link_to game.title, game_path(game) %></p>
-          <p><%= game.start_time%></p>
-          <p><%= game.end_time %></p>
-          <p><%= game.team.team_name %></p>
-    </div>
-  <% end %>
-</div>
-
-
-
-
-
 <section id="team">
-  <div class="main">
-    <div class="main2">
-          <div class="title">
-            <h1 class="title2">練習試合募集一覧</h1>
+  <div class="registration-main">
+    <div class="form-wrap">
+          <div class="form-header">
+            <h1 class="form-header-text">練習試合募集一覧</h1>
           </div>
 
            <div class='index-form-group'>
             <%= link_to '新規募集', new_game_path ,class:"login-red-btn"%> 
           </div>
 
-          <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
-            <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-            <%= form.submit "検索", class: "search-btn" %>
+          <div class="search">
+            <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
+              <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+              <%= form.submit "検索", class: "search-btn" %>
             <% end %>
+          </div>
 
-          <div class="all-team">
+          <div class="game-all-team">
               <% @game.each do |game| %>
-              <li class='list'>
+              <li class='game-list'>
                 <%= link_to team_path(game.team_id), method: :get do %>
-                  <div class='item-img-content'><div class="f"><%= image_tag game.team.image, class: 'team-image' if game.team.image.attached? %></div>
+                  <div class='game-item-img-content'><div class="game-f"><%= image_tag game.team.image, class: 'team-image' if game.team.image.attached? %></div>
                       
                       
                   </div>
-                  <div class='item-info'>
-                  <div class='item-price'>
-                        <div class="e"><%=link_to "募集内容: #{game.title}", game_path(game) %></div>
-                      </div>
-                      <div class='item-name'>
-                        <div class="e"><%= link_to "チーム名: #{game.team.team_name}", team_path(game.team_id) %></div>
-                      </div>
-                      <div class='item-price'>
-                        <div class="e"><%= "エリア: #{game.team.area.name}" %></div>
-                      </div>
-                      <div class='item-price'>
-                        <div class="e"><%= "場所: #{game.place}" %></div>
-                      </div>
-                       <div class='item-price'>
-                        <div class="e"><%= "日付: #{game.start_time.year}年#{game.start_time.month}月#{game.start_time.day}日" %></div>
-                      </div>
-                       <div class='item-price'>
-                        <div class="e"><%= "時間: #{game.start_time.hour}時#{game.start_time.min}分〜#{game.end_time.hour}時#{game.end_time.min}分" %></div>
+                  <div class='game-item-info'>
+                    <div class="game-item">
+                        <div class='game-item-name'>
+                          <div class="game-e"><%=link_to "募集内容:  #{game.title}", game_path(game) %></div>
+                        </div>
+                        <div class='game-item-name'>
+                          <div class="game-e"><%= link_to "チーム名: #{game.team.team_name}", team_path(game.team_id) %></div>
+                        </div>
+                        <div class='game-item-name'>
+                          <div class="game-e"><%= "エリア: #{game.team.area.name}" %></div>
+                        </div>
+                        <div class='game-item-name'>
+                          <div class="game-e"><%= "場所: #{game.place}" %></div>
+                        </div>
+                        <div class='game-item-name'>
+                          <div class="game-e"><%= "日付: #{game.start_time.year}年#{game.start_time.month}月#{game.start_time.day}日" %></div>
+                        </div>
+                        <div class='game-item-name'>
+                          <div class="game-e"><%= "時間: #{game.start_time.hour}時#{game.start_time.min}分〜#{game.end_time.hour}時#{game.end_time.min}分" %></div>
+                        </div>
                       </div>
                   </div>
                 <% end %>
