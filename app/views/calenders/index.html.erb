@@ -1,5 +1,15 @@
-
-<%= link_to 'スケジュール追加', new_calender_path %> 
+ <div class="index-main">
+    <div class='index-form-wrap'>
+        <div class='index-form-header'>
+          <h1 class='index-form-header-text'>
+            スケジュール一覧
+          </h1>
+        </div>
+      <div class='index-form-group'>
+        <%= link_to 'スケジュール追加', new_calender_path ,class:"login-red-btn"%> 
+      </div>
+    </div>
+  </div>
 
   <%= month_calendar events: @events do |date, events| %>
     <%= date.day %>
