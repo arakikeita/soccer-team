@@ -1,9 +1,72 @@
 
-<div class="profile">
-  <%= @user.nickname %>
-  <% @user.user_teams.each do |team| %>
-    <div class="content_post">
-      <%= team.team.team_name %>
+
+  <div class="main">
+    <div class='form-wrap'>
+            <div class='form-header'>
+              <h1 class='form-header-text'>
+                マイページ
+              </h1>
+            </div>
+
+
+            <div class="form-group">
+                  <div class='form-text-wrap'>
+                      <div class="form-image">
+                          <%= image_tag @user.image, class: 'team-image' if @user.image.attached? %>
+                      </div>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">名前:</label>
+                      <span class="indispensable"><%= @user.nickname %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">代表チーム:</label>
+                      <% @user.owned_teams.each do |team| %>
+                        <span class="indispensable">
+                          <%= link_to team.team_name, team_path(team) %>
+                        </span>
+                        <% end %>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">所属チーム:</label>
+                       <% @user.user_teams.each do |team| %>
+                        <span class="indispensable">
+                          <%= link_to team.team.team_name,team_path(team) %>
+                        </span>
+                        <% end %>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">ポジション:</label>
+                      <span class="indispensable"><%= @user.position.name %></span>
+                  </div>
+
+                    <div class='form-text-wrap'>
+                      <label class="form-text">得意なプレー:</label>
+                      <span class="indispensable"><%= @user.play %></span>
+                  </div>
+            </div>
+
+      <div class='login-btn'>
+          <% if @user.id == current_user.id %>
+             <div class="login-red-btn"><%= link_to '編集', edit_user_registration_path(@user) ,class:"login-red-btn"%></div>
+            <div class="login-red-btn"><%= link_to '削除',user_path(@user),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
+          <% end %>
+      </div>
+
+      
+              
+
+   
+        
+
     </div>
-  <% end %>
 </div>
+
+
+    
+
+

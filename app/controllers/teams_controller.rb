@@ -86,10 +86,12 @@ class TeamsController < ApplicationController
 
   def ensure_correct_user
     @team = Team.find(params[:id])
-    unless @team.owner_id == current_user.id
+    unless @team.user_id == current_user.id
       redirect_to groups_path
     end
   end
+
+  
   
 
 

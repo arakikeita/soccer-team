@@ -52,20 +52,6 @@
       </div>
 
       
-              
-
-
-      <div class='login-btn'>
-          <% if @team.user_id == current_user.id %>
-            <div class="login-red-btn"><%= link_to "承認待ち一覧", team_applies_path(@team),class:"login-red-btn" %></div>
-          <% elsif Apply.exists?(team_id: @team, user_id: current_user.id)  %>
-              <div class="login-red-btn"><%= link_to '申請取消', team_apply_path(@team, @apply.ids), method: :delete,class:"login-red-btn" %></div>
-          <% elsif   @team.users.include?(current_user)%>
-               <div class="login-red-btn"> <%= link_to 'チームを退会する', team_path(@team), method: :delete ,class:"login-red-btn"%></div>
-          <% else %>
-                <div class="login-red-btn1"><%= link_to '加入申請', team_applies_path(@team), method: :post ,class:"login-red-btn1" %></div>
-          <% end %>
-      </div>
 
    
         

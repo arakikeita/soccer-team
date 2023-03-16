@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :attends
   has_one_attached :image
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :position
+
   validates :nickname, presence: true
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze

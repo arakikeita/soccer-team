@@ -1,14 +1,35 @@
-<div class="container applicant-wrapper">
-    <h3>承認待ちユーザ一覧</h3>
-    <div class="row">
-        <% @applies.each do |app| %>
-        <div class="col-6">
+
+
+
+<div class="main">
+  <div class='form-wrap'>
+            <div class='form-header'>
+              <h1 class='form-header-text'>
+                承認待ちユーザー一覧
+              </h1>
+            </div>
+
+
+            <div class="form-group">
+                  <div class='form-text-wrap'>
+                     
+                          <% @applies.each do |app| %>
+                           <li class="apply-login-btn">
             
-            &nbsp<%= app.user.nickname %><br>
-            <%= link_to "承認",  team_user_teams_path(app.team, user_id: app.user.id, apply_id: app.id), method: :post, class:"mini-green-link-btn font-bold text-line-none" %>
-            <%= link_to "却下", team_apply_path(app.team, app), method: :delete, class:"mini-red-link-btn font-bold text-line-none" %>
-            <br>
-        </div>
-        <% end %>
-    </div>
+                                <div class="p"><%= link_to app.user.nickname, user_path(app.user_id) ,class:"name-login-red-btn"%></div>
+                                <div class="q">
+                                  <div class="p"><%= link_to "承認",  team_user_teams_path(app.team, user_id: app.user.id, apply_id: app.id), method: :post, class:"login-blue-btn" %></div>
+                                  <div class="p"><%= link_to "却下", team_apply_path(app.team, app), method: :delete, class:"login-red-btn" %></div>
+                                </div>
+                            </li>
+                          <% end %>
+                    
+                    
+                    </div>
+            </div>
+
+   </div>
 </div>
+
+
+    
