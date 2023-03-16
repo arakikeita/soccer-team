@@ -53,6 +53,7 @@ Things you may want to cover:
 - has_many :attends, dependent: :destroy
 - has_many :applies
 - has_many :calenders
+- has_one_attached :image
 
 
 
