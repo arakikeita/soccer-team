@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :applies, dependent: :destroy
   has_many :calenders
   has_many :attends
+  has_one_attached :image
 
   validates :nickname, presence: true
 
