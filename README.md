@@ -29,16 +29,20 @@ Things you may want to cover:
 
 ## usersテーブル
 
-| Column     | Type        | Option         |
-| ---------- | ---------   | -------------- |
-| nickname   | string      | null: false    |
-| email      | string      | null: false, unique:true | ユニーク制約
+| Column      | Type        | Option         |
+| ----------  | ---------   | -------------- |
+| nickname    | string      | null: false    |
+| email       | string      | null: false, unique:true | ユニーク制約
 | encrypted_password  | string    | null: false    | 
-| surname    | string      | null: false    |
-| name       | string      | null: false    |
-| surnamek   | string      | null: false    |
-| namek      | string      | null: false    |
-| birthday   | date        | null: false    |
+| surname     | string      | null: false    |
+| name        | string      | null: false    |
+| surnamek    | string      | null: false    |
+| namek       | string      | null: false    |
+| birthday    | date        | null: false    |
+| position_id | integer     | null: false    |
+| play        | string      | null: false    |
+
+
 
 ### Association
 

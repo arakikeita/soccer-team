@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   ##before_action :authenticate_user! ##ログイン状態により表示ページを切り替える。ログインしていなければログイン画面に遷移する。
-  before_action :ensure_correct_user, only: [:edit, :update] ##チームオーナーでないと更新できない。
+  before_action :ensure_correct_user, only: [:edit, :update,:destroy] ##チームオーナーでないと更新できない。
 
 
 
@@ -87,11 +87,11 @@ class TeamsController < ApplicationController
   def ensure_correct_user
     @team = Team.find(params[:id])
     unless @team.user_id == current_user.id
-      redirect_to groups_path
+      redirect_to root_path
     end
   end
 
-  
+
   
 
 
