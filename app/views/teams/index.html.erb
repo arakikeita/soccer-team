@@ -1,46 +1,53 @@
 <% if user_signed_in? %>
-<section id="team">
-  <div class="main">
-    <div class="main2">
-          <div class="title">
-            <h1 class="title2">チーム一覧</h1>
-          </div>
+    <section id="team">
+      <div class="main">
+        <div class="main2">
+              <div class="title">
+                <h1 class="title2">チーム一覧</h1>
+              </div>
 
-          <div class="all-team">
-              <% @team.each do |team| %>
-              <li class='list'>
-                <%= link_to team_path(team.id), method: :get do %>
-                  <div class='item-img-content'>
-                      
-                      <div class="f"><%= image_tag team.image, class: 'team-image' if team.image.attached? %></div>
-                  </div>
-                  <div class='item-info'>
-                      <div class='item-name'>
-                        <div class="e"><%= link_to "チーム名: #{team.team_name}", team_path(team) %></div>
+              <div class="all-team">
+                  <% @team.each do |team| %>
+                  <li class='list'>
+                    <%= link_to team_path(team.id), method: :get do %>
+                      <div class='item-img-content'>
+                          
+                          <div class="f"><%= image_tag team.image, class: 'team-image' if team.image.attached? %></div>
                       </div>
-                      <div class='item-price'>
-                        <div class="e"><%= "所属人数: #{team.users.count}人" %></div>
+                      <div class='item-info'>
+                          <div class='item-name'>
+                            <div class="e"><%= link_to "チーム名: #{team.team_name}", team_path(team) %></div>
+                          </div>
+                          <div class='item-price'>
+                            <div class="e"><%= "所属人数: #{team.users.count}人" %></div>
+                          </div>
                       </div>
-                  </div>
-                <% end %>
-              </li>
-              <% end %>
+                    <% end %>
+                  </li>
+                  <% end %>
+              </div>
           </div>
-       </div>
-    <div>
-</section>
+        <div>
+    </section>
 
-    <% else %>
+      <% if  @team.length == 0 %>
+      <div class="main4">
+            <div class="main3">
+                      <div class="sign">
+                        <%= link_to 'チーム新規作成', new_team_path, class: "sign-up" %>
+                      </div>
+            </div>
+        </div>   
+      <% end %>
+<% else %>
 
-
+    <div class="main4">
       <div class="main3">
-     
               <div class="sign">
                 <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
               </div>
-        
-
       </div>
-    <% end %>
+    </div>
+<% end %>
 
 
