@@ -1,45 +1,4 @@
- <div class='col-md-8 offset-md-1'>
-      <h2>>練習試合詳細</h2>
-      <table class='table table-hover table-inverse'>
-        <tr>
-          
-          <td><%= @game.title %></td>
-          <td><%= @game.start_time%></td>
-          <td><%= @game.end_time %></td>
-          <td><%= @game.place %></td>
-          <td><%=link_to @game.team.team_name, team_main_path(@game.team_id) %></td>
-         
-          
-          <td>
-              <% if @game.user_id == current_user.id %>
-                <%= link_to '編集', edit_game_path(@game), class: "btn btn-sm btn-success" %>
-                <%= link_to '削除',game_path(@game),method: :delete,data: { confirm: '本当に削除しますか？' } ,
-                class: "btn btn-sm btn-outline-danger" %>```
-              <% end %>
-          </td>
-        </tr>
-      </table>
 
-       <div class="container">
-          <% if user_signed_in? %>
-            <%= form_with(model: [@game, @comment], local: true) do |form| %>
-              <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
-              <%= form.submit "SEND" %>
-            <% end %>
-          <% else %>
-            <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-          <% end %>
-          <div class="comments">
-            <h4>＜コメント一覧＞</h4>
-            <% @comments.each do |comment| %>
-              <p>
-                <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-                <%= comment.content %>
-              </p>
-            <% end %>
-          </div>
-        </div>
-  </div>
 
 
     <div class="main">
