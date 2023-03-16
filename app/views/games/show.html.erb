@@ -80,8 +80,8 @@
 
       <div class='login-btn'>
           <% if @game.user_id == current_user.id %>
-             <div class="login-red-btn"><%= link_to '編集', edit_team_path(@game.team_id) ,class:"login-red-btn"%></div>
-            <div class="login-red-btn"><%= link_to '削除',team_all_destroy_path(@game.team_id),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
+             <div class="login-red-btn"><%= link_to '編集', edit_game_path(@game.team_id) ,class:"login-red-btn"%></div>
+            <div class="login-red-btn"><%= link_to '削除',game_path(@game.team_id),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
           <% end %>
       </div>
 
