@@ -96,9 +96,6 @@
   flex-direction: column;
 }
 
-.game-team-name a{
-  
-}
 
 
 .game-team-image {
@@ -109,14 +106,20 @@
 
 .game-e{
   text-align: left;
-  
-  
 }
 
 
 .game-e a{
-
   text-decoration: none;
   color:#333;
 }
 
+.game-i{
+  text-align: left;
+}
+
+.game-i a{
+  text-decoration: none;
+  color:#333;
+  font-weight: bold;
+}

@@ -41,4 +41,104 @@
         </div>
   </div>
 
+
+    <div class="main">
+    <div class='form-wrap'>
+            <div class='form-header'>
+              <h1 class='form-header-text'>
+                練習試合募集詳細
+              </h1>
+            </div>
+
+
+            <div class="form-group">
+                  <div class='form-text-wrap'>
+                      <div class="form-image">
+                          <%= image_tag @game.team.image, class: 'team-image' if @game.team.image.attached? %>
+                      </div>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">タイトル:</label>
+                      <span class="indispensable"><%= @game.title %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">チーム名:</label>
+                      <span class="indispensable"><%=link_to @game.team.team_name, team_main_path(@game.team_id) %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">代表者:</label>
+                      <span class="indispensable"><%= @game.user.nickname %></span>
+                  </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">活動エリア:</label>
+                      <span class="indispensable"><%= @game.team.area.name %></span>
+                  </div>
+
+                   <div class='form-text-wrap'>
+                      <label class="form-text">場所:</label>
+                      <span class="indispensable"><%= @game.place %></span>
+                  </div>
+
+                   <div class='form-text-wrap'>
+                      <label class="form-text">日付:</label>
+                      <span class="indispensable"><%= "日付: #{@game.start_time.year}年#{@game.start_time.month}月#{@game.start_time.day}日" %></span>
+                  </div>
+
+                   <div class='form-text-wrap'>
+                      <label class="form-text">時間:</label>
+                      <span class="indispensable"><%= "時間: #{@game.start_time.hour}時#{@game.start_time.min}分〜#{@game.end_time.hour}時#{@game.end_time.min}分" %></span>
+                  </div>
+
+                    <div class='form-text-wrap'>
+                      <label class="form-text">詳細:</label>
+                      <span class="indispensable"><%= @game.content %></span>
+                  </div>
+
+                  <div class="container">
+                    <% if user_signed_in? %>
+                      <%= form_with(model: [@game, @comment], local: true) do |form| %>
+                        <%= form.text_area :content, placeholder: "コメントする", rows: "2" ,class: "containers"%>
+                        <%= form.submit "コメント送信",class:"login-red-btn" %>
+                      <% end %>
+                    <% else %>
+                      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+                    <% end %>
+                    <div class="comments">
+                      <h4>＜コメント一覧＞</h4>
+                      <% @comments.each do |comment| %>
+                        <p>
+                          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+                          <%= comment.content %>
+                        </p>
+                      <% end %>
+                    </div>
+                  </div>
+            </div>
+
+      <div class='login-btn'>
+          <% if @game.user_id == current_user.id %>
+             <div class="login-red-btn"><%= link_to '編集', edit_team_path(@game.team_id) ,class:"login-red-btn"%></div>
+            <div class="login-red-btn"><%= link_to '削除',team_all_destroy_path(@game.team_id),method: :delete,data: { confirm: '本当に削除しますか？' } ,class:"login-red-btn" %></div>           
+          <% end %>
+      </div>
+
+      
+              
+
+
+   
+
+   
+        
+
+    </div>
+</div>
+
+
+    
+
   
