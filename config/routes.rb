@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :user_teams, only: [:index, :create, :destroy]
   end
 
-  resources :users, only: :show
+  resources :users, only: [:show, :destroy]
 
   resources :calenders do
     resources :attends, only: [:create,:destroy]

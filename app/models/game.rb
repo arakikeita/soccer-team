@@ -5,7 +5,7 @@ class Game < ApplicationRecord
     has_one_attached :image
     belongs_to :team
     belongs_to :user
-    has_many :comments
+    has_many :comments, dependent: :destroy
 
 
     validates :title, :start_time, :end_time,:place,:content, presence: true
