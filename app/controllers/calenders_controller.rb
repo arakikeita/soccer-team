@@ -54,7 +54,7 @@ class CalendersController < ApplicationController
   private
 
   def calender_params
-    params.require(:calender).permit(:title, :content, :start_time).merge(user_id: current_user.id,team_id: params[:team_id])
+    params.require(:calender).permit(:title, :content, :start_time, :end_time).merge(user_id: current_user.id,team_id: params[:team_id])
   end
 
 

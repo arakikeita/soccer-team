@@ -22,6 +22,16 @@
                       <label class="form-text">詳細:</label>
                       <span class="indispensable"><%= @calender.content %></span>
                   </div>
+
+                  <div class='form-text-wrap'>
+                      <label class="form-text">日付:</label>
+                      <span class="indispensable"><%= "日付: #{@calender.start_time.year}年#{@calender.start_time.month}月#{@calender.start_time.day}日" %></span>
+                  </div>
+
+                   <div class='form-text-wrap'>
+                      <label class="form-text">時間:</label>
+                      <span class="indispensable"><%= "時間: #{@calender.start_time.hour}時#{@calender.start_time.min}分〜#{@calender.end_time.hour}時#{@calender.end_time.min}分" %></span>
+                  </div>
             </div>
 
  

@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2023_03_09_055119) do
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
     t.bigint "user_id"
     t.bigint "team_id"
     t.index ["team_id"], name: "index_calenders_on_team_id"
