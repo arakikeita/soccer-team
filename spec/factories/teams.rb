@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :team do
     association :user
-    
+   
     
     team_name {Faker::Name.name}
     name {Faker::Name.name}

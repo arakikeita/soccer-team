@@ -9,21 +9,39 @@ RSpec.describe UserTeam, type: :model do
   describe 'チーム参加' do
     
       context 'チーム参加できるとき' do
-      
-      
-      
+        it '全て入力されていると作成ができる' do
+          team = FactoryBot.create(:team)
+          user = FactoryBot.create(:user)
+          @userteams = FactoryBot.build(:user_team, team_id: team.id, user_id: user.id)
+          expect(@userteams).to be_valid
+        end
       end
 
       context 'チーム参加できないとき' do
-        it 'email一意性がないと登録できない' do
-          binding.pry
-          @userteam.save
-          another_userteam = FactoryBot.build(:user_team)
-          another_userteam.user_id = @userteam.user_id
-          another_userteam.team_id = @userteam.team_id
+        it 'すでに保存されているtea_idとuser_idがあると作成できない' do
+    
+          team = FactoryBot.create(:team)
+          user = FactoryBot.create(:user)
+          @userteams = FactoryBot.create(:user_team, team_id: team.id, user_id: user.id)
+          another_userteams = FactoryBot.build(:user_team)
+          another_userteams.user_id = @userteams.user_id
+          another_userteams.team_id = @userteams.team_id
 
-          another_userteam.valid?
-          expect(another_userteam.errors.full_messages).to include("Email has already been taken")
+          another_userteams.valid?
+          expect(another_userteams.errors.full_messages).to include("User has already been taken")
+        end
+
+        it 'すでに保存されているtea_idとuser_idがあると作成できない' do
+          
+          team = FactoryBot.create(:team)
+          user = FactoryBot.create(:user)
+          @userteams = FactoryBot.create(:user_team, team_id: team.id, user_id: user.id)
+          another_userteams = FactoryBot.build(:user_team)
+          another_userteams.user_id = @userteams.user_id
+          another_userteams.team_id = @userteams.team_id
+
+          another_userteams.valid?
+          expect(another_userteams.errors.full_messages).to include("Team has already been taken")
         end
       end
 
