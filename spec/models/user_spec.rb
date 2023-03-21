@@ -74,6 +74,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Surname can't be blank")
       end
+      it 'nicknameが空だと登録できない' do
+        @user.name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Nickname can't be blank")
+      end
       it 'nameが空だと登録できない' do
         @user.name = ''
         @user.valid?
@@ -113,6 +118,16 @@ RSpec.describe User, type: :model do
         @user.birthday = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
+      end
+      it 'play空だと登録できない' do
+        @user.birthday = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Play can't be blank")
+      end
+      it 'position_idが1だと出品できない' do
+        @user.position_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Position can't be blank")
       end
 
     end

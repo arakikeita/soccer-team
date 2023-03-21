@@ -12,5 +12,7 @@ FactoryBot.define do
     surnamek {person.first.katakana}
     namek {person.last.katakana}
     birthday {Faker::Date.backward}
+    play {Faker::Lorem.paragraph}
+    position_id {Faker::Number.between(from: 2, to: 5)}
   end
 end
