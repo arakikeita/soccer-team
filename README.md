@@ -53,6 +53,7 @@ Things you may want to cover:
 - has_many :attends, dependent: :destroy
 - has_many :applies
 - has_many :calenders
+- has_many :comments
 - has_one_attached :image
 
 
@@ -95,7 +96,7 @@ Things you may want to cover:
 
 
 
-## applyテーブル 
+## appliesテーブル 
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -107,6 +108,7 @@ Things you may want to cover:
 
 - belong_to :team
 - belong_to :user
+
 
 
 
@@ -125,7 +127,7 @@ Things you may want to cover:
 
 
 
-## calenderテーブル
+## calendersテーブル
 
 | Column       | Type        | Option         |
 | ----------   | ---------   | -------------- |
@@ -177,17 +179,5 @@ Things you may want to cover:
 - belongs_to :game
 
 
-
-## appliesテーブル
-
-| Column       | Type        | Option         |
-| ----------   | ---------   | -------------- |
-| user         | references  | null: false, foreign_key: true |
-| team         | references  | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :team
-- belongs_to :user
 
 
