@@ -9,7 +9,7 @@ RSpec.describe UserTeam, type: :model do
   describe 'チーム参加' do
     
       context 'チーム参加できるとき' do
-       
+        it '全て入力されていると作成ができる' do
           team = FactoryBot.create(:team)
           user = FactoryBot.create(:user)
           @userteams = FactoryBot.build(:user_team, team_id: team.id, user_id: user.id)
