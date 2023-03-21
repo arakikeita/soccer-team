@@ -40,7 +40,7 @@ RSpec.describe Team, type: :model do
       it 'area_idが1だと出品できない' do
         @team.area_id = 1
         @team.valid?
-        expect(@team.errors.full_messages).to include("Area must be other than 1")
+        expect(@team.errors.full_messages).to include("Area can't be blank")
       end
 
       it 'owner_idが空だと出品できない' do

@@ -19,7 +19,14 @@ class Team < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
 
-  validates :area_id, numericality: { other_than: 1}
-  validates :team_name, :name, :introduction,:owner_id, presence: true
+  
+
+  with_options presence: true do
+    validates :team_name
+    validates :name
+    validates :introduction
+    validates :area_id , numericality: { other_than: 1 ,message: "can't be blank"}
+    validates :owner_id
+  end
 
 end
