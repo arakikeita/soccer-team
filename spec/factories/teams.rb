@@ -7,7 +7,7 @@ FactoryBot.define do
     name {Faker::Name.name}
     introduction {Faker::Lorem.paragraph}
     area_id {Faker::Number.between(from: 2, to: 49)}
-    owner_id{Faker::Number.number}
+    owner_id{user_id}
     
 
     after(:build) do |team|

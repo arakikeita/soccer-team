@@ -7,8 +7,11 @@ class Game < ApplicationRecord
     belongs_to :user
     has_many :comments, dependent: :destroy
 
-
-    validates :title, :start_time, :end_time,:place,:content, presence: true
+    with_options presence: true do
+        validates :title
+        validates :place
+        validates :content
+    end
 
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :area
@@ -17,9 +20,6 @@ class Game < ApplicationRecord
     def self.search(search)
         if search != ""
           Game.joins(:team).where('title LIKE(?) OR place LIKE(?) OR start_time LIKE(?) OR team_name LIKE(?) ', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-      
-         
-          
         else
           Game.all
         end
