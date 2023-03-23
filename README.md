@@ -185,8 +185,7 @@ Things you may want to cover:
 
 
 
-
-#　アプリケーション名　  
+#  アプリケーション名　  
 
     MY TEAM
 
