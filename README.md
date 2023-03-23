@@ -249,7 +249,7 @@ Things you may want to cover:
 
 
 # 洗い出した要件　  
-　
+  https://docs.google.com/spreadsheets/d/1q_OEbDs0re6O0oRYEebKipAmRc0_RMhb4mX3XTYiUQw/edit#gid=982722306　
 
 
 #　実装した機能についての画像やGIFおよびその説明
@@ -258,11 +258,25 @@ Things you may want to cover:
 # 実装予定の機能  
 
 
+  1. 参加人数不足                    →  スケット募集機能(実装前)
+  2. データの管理ができない            →  試合データ管理機能(実装前)
+  3. ゲストログイン機能
+  4. 画像プレビュー機能
+  5. いいね機能
+  6. フォロー機能
+  7. 通知機能
+  8. ページネーション機能
+  9. パンくずリスト機能
+  10. Google　API
+  11. SNS　　API
+
+
+
 # データベース設計
 
 
 # 画面遷移図  
-
+  
 
 # 開発環境  
 
