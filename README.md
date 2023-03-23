@@ -288,10 +288,7 @@ Things you may want to cover:
 # ローカルでの動作方法
 
 
-  % git clone </br>
-  % cd soccer_team </br>
-  % bundle install </br>
-  % yarn install </br>
+
 
 
 # 工夫したポイント  
