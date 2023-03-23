@@ -127,7 +127,7 @@ Things you may want to cover:
 
 
 
-## calendersテーブル
+## calendersテーブル  
 
 | Column       | Type        | Option         |
 | ----------   | ---------   | -------------- |
@@ -196,18 +196,16 @@ Things you may want to cover:
   チーム単位でアプリを使用知ることができる。
 
 
-# URL
+# URL  
 
 
 # テスト用アカウント  
-
 
   Basic認証パスワード :2222
   Basic認証ID       :admin
 
 
-
-#　利用方法　　
+# 利用方法　  
 
 
   ##　チーム作成
@@ -234,6 +232,7 @@ Things you may want to cover:
   　3. ユーザーは募集内容に対してコメントをすることができる。
 
 
+
 # アプリケーションを作成した背景  
 
   私も社会人サッカーチームの代表を努めたこともありチームを運営する上での課題をアプリで解決したいと思い作成をしました。
@@ -249,13 +248,14 @@ Things you may want to cover:
 
 
 # 洗い出した要件　  
-  https://docs.google.com/spreadsheets/d/1q_OEbDs0re6O0oRYEebKipAmRc0_RMhb4mX3XTYiUQw/edit#gid=982722306　
+[要件定義書](https://docs.google.com/spreadsheets/d/1q_OEbDs0re6O0oRYEebKipAmRc0_RMhb4mX3XTYiUQw/edit#gid=982722306)
 
 
-#　実装した機能についての画像やGIFおよびその説明
+
+# 　実装した機能についての画像やGIFおよびその説明  
 
 
-# 実装予定の機能  
+#  実装予定の機能  
 
 
   1. 参加人数不足                    →  スケット募集機能(実装前)
@@ -273,7 +273,7 @@ Things you may want to cover:
 
 
 # データベース設計
-
+  ![test](https://user-images.githubusercontent.com/116570382/227120426-df69e3ec-df94-41d2-acba-8dc4e38775b3.png)
 
 # 画面遷移図  
   
