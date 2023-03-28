@@ -1,36 +1,39 @@
+/*-----------------------------------------------
+ここから PC用
+-------------------------------------------------*/
 
 
-
-.main {
+.apply-main {
   width: 100%;
-  min-width: 800px;
   height: 100%;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
-.form-wrap {
+
+.apply-form-wrap {
   width: 50vw;
   background-color: white;
   padding-bottom: 70px;
 }
 
-.form-header {
+.apply-form-header {
   width: 100%;
   height: 120px;
   text-align: center;
   font-size: 22px;
+ 
 }
 
-.form-header-text {
+.apply-form-header-text {
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
+
 }
 
-.form-group {
+.apply-form-group {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -38,47 +41,33 @@
   padding-top: 20px;
 }
 
-.form-group:first-child {
+.apply-form-group:first-child {
   padding: 0;
 }
 
-.form-text-wrap {
+.apply-form-text-wrap {
   width: 100%;
   height: 20%;
   margin-top:10px;
 }
 
-.form-text {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.indispensable a{
-  text-decoration: none;
-  color:#333;
-  font-weight:bold;
-  border-bottom:solid 2px #333 ;
-}
-
 .apply-login-btn {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   display:flex;
   justify-content: space-between;
 }
 
-.o{
-  text-align: center;
-}
 
-.q{
+
+.apply-q{
   display:flex;
 }
-.p{
+.apply-p{
   margin-right:2px;
 }
 
-.login-blue-btn {
+.apply-login-blue-btn {
   width: 100%;
   background:#4c2dea ;
   border: 1px solid #4c2dea;
@@ -90,7 +79,7 @@
   text-decoration: none;
   margin-bottom:5px;
 }
-.login-red-btn {
+.apply-login-red-btn {
   width: 100%;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -103,7 +92,7 @@
   margin-bottom:5px;
 }
 
-.name-login-red-btn {
+.apply-name-login-red-btn {
   width: 100%;
   color: #333;
   line-height: 48px;
@@ -113,3 +102,76 @@
   margin-bottom:5px;
 }
 
+/*-----------------------------------------------
+ここまで PC用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから タブレット用
+-------------------------------------------------*/
+@media (max-width: 1024px) {
+.apply-form-wrap {
+  width: 100%;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+
+
+
+}
+
+
+/*-----------------------------------------------
+ここまで タブレット用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから スマフォ用
+-------------------------------------------------*/
+@media (max-width: 599px) {
+  .apply-form-header {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    font-size: 15px;
+   
+  }
+
+  .apply-login-btn {
+    width: 90%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .apply-name-login-red-btn {
+    width: 100%;
+    color: #333;
+    line-height: 48px;
+    font-size: 21px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom:5px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+}
+
+
+/*-----------------------------------------------
+ここまで スマフォ用
+-------------------------------------------------*/
