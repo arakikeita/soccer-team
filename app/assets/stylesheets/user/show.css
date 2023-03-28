@@ -141,7 +141,12 @@
 ここから スマフォ用
 -------------------------------------------------*/
 @media (max-width: 599px) {
-
+  .user-show-form-header {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    font-size: 15px;
+  }
 
 
 

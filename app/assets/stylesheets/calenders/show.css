@@ -1,37 +1,36 @@
-
 /*-----------------------------------------------
 ここから PC用
 -------------------------------------------------*/
-.game-new-main {
-  width: 100%;
 
+
+.calender-show-main {
+  width: 100%;
   height: 100%;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
 }
 
-
-.game-new-form-wrap {
+.calender-show-form-wrap {
   width: 50vw;
   background-color: white;
-  padding-bottom:70px;
+  padding-bottom: 70px;
 }
 
-.game-new-form-header {
+.calender-show-form-header {
   width: 100%;
   height: 120px;
   text-align: center;
   font-size: 22px;
 }
 
-.game-new-form-header-text {
+.calender-show-form-header-text {
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
 }
 
-.game-new-form-group {
+.calender-show-form-group {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -39,46 +38,97 @@
   padding-top: 20px;
 }
 
-.game-new-form-group:first-child {
+.calender-show-form-group:first-child {
   padding: 0;
 }
 
-.game-new-form-text-wrap {
+.calender-show-form-text-wrap {
   width: 100%;
   height: 20%;
   margin-top:10px;
+ 
 }
 
-.game-new-form-text {
+
+.container{
+  width:100%;
+  height:auto;
+  margin-top:10px;
+}
+.containers{
+  width:100%;
+  height:50px;
+}
+
+
+
+.calender-show-form-text {
   font-size: 14px;
   font-weight: bold;
+
 }
 
-.game-new-input-default {
-  width: 100%;
-  margin-top: 5px;
-  height: 48px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 16px;
-  resize: none;
+.calender-show-indispensable a{
+  text-decoration: none;
+  color:#333;
+  font-weight:bold;
+  border-bottom:solid 2px #333 ;
 }
 
-.game-new-time-input-default {
-  width: 20%;
-  display: flex;
-  resize: none;
-}
-
-
-
-.game-new-form-time{
+.calender-show-login-btn {
   width: 50%;
-  text-align: left;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 50px;
+
+}
+
+.calender-show-login-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom:5px;
+}
+.attends{
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+
+.attend-num{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom: 15px;
+  text-align: center;
+
+}
+.attend-name{
+  font-weight: none;
+  
+
+  
+}
+.attend-destroy{
+  margin-right:5px;
+
+  
+}
+
+
+.attend-left{
+  display: flex;
+  justify-content: center;
+  margin-top:5px;
+
 }
 
 /*-----------------------------------------------
@@ -90,23 +140,23 @@
 ここから タブレット用
 -------------------------------------------------*/
 @media (max-width: 1024px) {
-  .game-new-main{
-    width: 100vw;
-    height: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-  }
 
-  .game-new-form-wrap {
+  .calender-show-form-wrap {
     width: 100%;
     background-color: white;
     padding-bottom: 70px;
   }
 
+
+
+
+
+
+
+
+
+
 }
-
-
 
 /*-----------------------------------------------
 ここまで タブレット用
@@ -116,40 +166,31 @@
 /*-----------------------------------------------
 ここから スマフォ用
 -------------------------------------------------*/
+
 @media (max-width: 599px) {
-  .game-new-main{
-    width: 100vw;
-    height: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-  }
 
-  .game-new-form-wrap {
-    width: 100%;
-    background-color: white;
-    padding-bottom: 70px;
-  }
-
-  .game-new-time-input-default {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    resize: none;
-    margin-top: 5px;
-  }
-
-  .game-new-form-header {
+  .calender-show-form-header {
     width: 100%;
     height: 120px;
     text-align: center;
     font-size: 15px;
   }
 
+  .calender-show-form-group {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  
+  
 }
 
 
 
+  
 /*-----------------------------------------------
 ここまで スマフォ用
 -------------------------------------------------*/
