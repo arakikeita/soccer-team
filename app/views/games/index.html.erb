@@ -1,8 +1,8 @@
 <section id="team">
-  <div class="registration-main">
-    <div class="form-wrap">
-          <div class="form-header">
-            <h1 class="form-header-text">練習試合募集一覧</h1>
+  <div class="game-index-main">
+    <div class="game-index-form-wrap">
+          <div class="game-index-form-header">
+            <h1 class="game-index-form-header-text">練習試合募集一覧</h1>
           </div>
 
            <div class='index-form-group'>
@@ -16,33 +16,33 @@
             <% end %>
           </div>
 
-          <div class="game-all-team">
+          <div class="game-index-all-team">
               <% @game.each do |game| %>
-              <li class='game-list'>
+              <li class='game-index-list'>
                 <%= link_to team_path(game.team_id), method: :get do %>
-                  <div class='game-item-img-content'><div class="game-f"><%= image_tag game.team.image, class: 'team-image' if game.team.image.attached? %></div>
+                  <div class='game-index-item-img-content'><div class="game-f"><%= image_tag game.team.image, class: 'team-image' if game.team.image.attached? %></div>
                       
                       
                   </div>
-                  <div class='game-item-info'>
-                    <div class="game-item">
-                        <div class='game-item-name'>
-                          <div class="game-i"><%=link_to "募集内容:  #{game.title}", game_path(game) %></div>
+                  <div class='game-index-item-info'>
+                    <div class="game-index-item">
+                        <div class='game-index-item-name'>
+                          <div class="game-index-i"><%=link_to "募集内容:  #{game.title}", game_path(game) %></div>
                         </div>
-                        <div class='game-item-name'>
-                          <div class="game-e"><%= link_to "チーム名: #{game.team.team_name}", team_path(game.team_id) %></div>
+                        <div class='game-index-item-name'>
+                          <div class="game-index-e"><%= link_to "チーム名: #{game.team.team_name}", team_path(game.team_id) %></div>
                         </div>
-                        <div class='game-item-name'>
-                          <div class="game-e"><%= "エリア: #{game.team.area.name}" %></div>
+                        <div class='game-index-item-name'>
+                          <div class="game-index-e"><%= "エリア: #{game.team.area.name}" %></div>
                         </div>
-                        <div class='game-item-name'>
-                          <div class="game-e"><%= "場所: #{game.place}" %></div>
+                        <div class='game-index-item-name'>
+                          <div class="game-index-e"><%= "場所: #{game.place}" %></div>
                         </div>
-                        <div class='game-item-name'>
-                          <div class="game-e"><%= "日付: #{game.start_time.year}年#{game.start_time.month}月#{game.start_time.day}日" %></div>
+                        <div class='game-index-item-name'>
+                          <div class="game-index-e"><%= "日付: #{game.start_time.year}年#{game.start_time.month}月#{game.start_time.day}日" %></div>
                         </div>
-                        <div class='game-item-name'>
-                          <div class="game-e"><%= "時間: #{game.start_time.hour}時#{game.start_time.min}分〜#{game.end_time.hour}時#{game.end_time.min}分" %></div>
+                        <div class='game-index-item-name'>
+                          <div class="game-index-e"><%= "時間: #{game.start_time.hour}時#{game.start_time.min}分〜#{game.end_time.hour}時#{game.end_time.min}分" %></div>
                         </div>
                       </div>
                   </div>
