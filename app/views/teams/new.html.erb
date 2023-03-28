@@ -1,7 +1,7 @@
-<%= form_with model: @team, url: teams_path, class: 'registration-main',local: true do |f| %>
-  <div class='form-wrap'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
+<%= form_with model: @team, url: teams_path, class: 'team-new-main',local: true do |f| %>
+  <div class='team-new-form-wrap'>
+    <div class='team-new-form-header'>
+      <h1 class='team-new-form-header-text'>
         チーム情報入力
       </h1>
     </div>
@@ -13,35 +13,35 @@
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
-    <div class="form-group">
-        <div class='form-text-wrap'>
+    <div class="team-new-form-group">
+        <div class='team-new-form-text-wrap'>
           <label class="form-image">
               <span class="image-file">画像</span>
               <%=f.file_field :image, class: 'hidden' %>
           </label>
         </div>
 
-        <div class='form-text-wrap'>
-          <label class="form-text">チーム名</label>
+        <div class='team-new-form-text-wrap'>
+          <label class="team-new-form-text">チーム名</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :team_name, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+        <%= f.text_field :team_name, class:"team-new-input-default", id:"team_name", placeholder:"", autofocus: true %>
    
       
-        <div class='form-text-wrap'>
-          <label class="form-text">代表者名</label>
+        <div class='team-new-form-text-wrap'>
+          <label class="team-new-form-text">代表者名</label>
           <span class="indispensable">必須</span>
         </div>
-         <%= f.text_field :name, class:"input-default", id:"name", placeholder:"" %>
+         <%= f.text_field :name, class:"team-new-input-default", id:"name", placeholder:"" %>
 
-        <div class='form-text-wrap'>
-          <label class="form-text">紹介文</label>
+        <div class='team-new-form-text-wrap'>
+          <label class="team-new-form-text">紹介文</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :introduction , class:"input-default", id:"introduction", placeholder:"", autofocus: true %>
+        <%= f.text_area :introduction , class:"team-new-input-default", id:"introduction", placeholder:"", autofocus: true %>
 
-        <div class="form-text-wrap">
-          <label class="form-text">活動エリア</label>
+        <div class="team-new-form-text-wrap">
+          <label class="team-new-form-text">活動エリア</label>
           <span class="indispensable">必須</span>
         </div>
           <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"input-default"}) %>

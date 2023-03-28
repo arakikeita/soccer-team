@@ -1,32 +1,32 @@
-  <div class="mains">
-    <div class='form-wrap'>
-            <div class='form-header'>
-              <h1 class='form-header-text'>
+  <div class="team-show-mains">
+    <div class='team-show-form-wrap'>
+            <div class='team-show-form-header'>
+              <h1 class='team-show-form-header-text'>
                 チーム詳細
               </h1>
             </div>
 
 
-            <div class="form-group">
-                  <div class='form-text-wrap'>
+            <div class="team-show-form-group">
+                  <div class='team-show-form-text-wrap'>
                       <div class="form-image">
                           <%= image_tag @team.image, class: 'team-image' if @team.image.attached? %>
                       </div>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">チーム名:</label>
-                      <span class="indispensable"><%=link_to @team.team_name, team_main_path(@team) %></span>
+                  <div class='team-show-form-text-wrap'>
+                      <label class="team-show-form-text">チーム名:</label>
+                      <span class="team-show-indispensable"><%=link_to @team.team_name, team_main_path(@team) %></span>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">代表者:</label>
-                      <span class="indispensable"><%= @team.name %></span>
+                  <div class='team-show-form-text-wrap'>
+                      <label class="team-show-form-text">代表者:</label>
+                      <span class="team-show-indispensable"><%= @team.name %></span>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">活動エリア:</label>
-                      <span class="indispensable"><%= @team.area.name %></span>
+                  <div class='team-show-form-text-wrap'>
+                      <label class="team-show-form-text">活動エリア:</label>
+                      <span class="team-show-indispensable"><%= @team.area.name %></span>
                   </div>
             </div>
 

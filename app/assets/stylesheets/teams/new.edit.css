@@ -1,0 +1,137 @@
+
+/*-----------------------------------------------
+ここから PC用
+-------------------------------------------------*/
+
+
+.team-new-main {
+  width: 100%;
+
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.team-new-form-wrap {
+  width: 50vw;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.team-new-form-header {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.team-new-form-header-text {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.team-new-form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.team-new-form-group:first-child {
+  padding: 0;
+}
+
+.team-new-form-text-wrap {
+  width: 100%;
+  height: 20%;
+  margin-top:10px;
+}
+
+.team-new-form-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.team-new-input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+/*-----------------------------------------------
+ここまで PC用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから タブレット用
+-------------------------------------------------*/
+@media (max-width: 1024px) {
+  .team-new-main{
+    width: 100vw;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .team-new-form-wrap {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 70px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------
+ここまで タブレット用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから スマフォ用
+-------------------------------------------------*/
+@media (max-width: 599px) {
+  .team-new-main{
+    width: 100vw;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .team-new-form-wrap {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 70px;
+  }
+
+}
+
+
+
+
+
+
+
+
+/*-----------------------------------------------
+ここまで スマフォ用
+-------------------------------------------------*/
