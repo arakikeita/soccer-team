@@ -1,34 +1,37 @@
 
-.registration-main {
+/*-----------------------------------------------
+ここから PC用
+-------------------------------------------------*/
+.game-new-main {
   width: 100%;
-  min-width: 800px;
+
   height: 100%;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
-.form-wrap {
+
+.game-new-form-wrap {
   width: 50vw;
   background-color: white;
-  padding-bottom:0;
+  padding-bottom:70px;
 }
 
-.form-header {
+.game-new-form-header {
   width: 100%;
   height: 120px;
   text-align: center;
   font-size: 22px;
 }
 
-.form-header-text {
+.game-new-form-header-text {
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
 }
 
-.form-group {
+.game-new-form-group {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -36,22 +39,22 @@
   padding-top: 20px;
 }
 
-.form-group:first-child {
+.game-new-form-group:first-child {
   padding: 0;
 }
 
-.form-text-wrap {
+.game-new-form-text-wrap {
   width: 100%;
   height: 20%;
   margin-top:10px;
 }
 
-.form-text {
+.game-new-form-text {
   font-size: 14px;
   font-weight: bold;
 }
 
-.input-default {
+.game-new-input-default {
   width: 100%;
   margin-top: 5px;
   height: 48px;
@@ -63,7 +66,7 @@
   resize: none;
 }
 
-.time-input-default {
+.game-new-time-input-default {
   width: 20%;
   display: flex;
   resize: none;
@@ -71,9 +74,76 @@
 
 
 
-.form-time{
+.game-new-form-time{
   width: 50%;
   text-align: left;
   margin: 0 auto;
   margin-top: 10px;
 }
+
+/*-----------------------------------------------
+ここまで PC用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから タブレット用
+-------------------------------------------------*/
+@media (max-width: 1024px) {
+  .game-new-main{
+    width: 100vw;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-new-form-wrap {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 70px;
+  }
+
+}
+
+
+
+/*-----------------------------------------------
+ここまで タブレット用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから スマフォ用
+-------------------------------------------------*/
+@media (max-width: 599px) {
+  .game-new-main{
+    width: 100vw;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-new-form-wrap {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 70px;
+  }
+
+  .game-new-time-input-default {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    resize: none;
+    margin-top: 5px;
+
+  }
+
+}
+
+
+
+/*-----------------------------------------------
+ここまで スマフォ用
+-------------------------------------------------*/
