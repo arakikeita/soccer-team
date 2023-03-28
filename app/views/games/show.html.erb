@@ -1,60 +1,60 @@
 
 
 
-    <div class="mains">
-    <div class='form-wrap'>
-            <div class='form-header'>
-              <h1 class='form-header-text'>
+    <div class="game-show-main">
+    <div class='game-show-form-wrap'>
+            <div class='game-show-form-header'>
+              <h1 class='game-show-form-header-text'>
                 練習試合募集詳細
               </h1>
             </div>
 
 
-            <div class="form-group">
-                  <div class='form-text-wrap'>
+            <div class="game-show-form-group">
+                  <div class='game-show-form-text-wrap'>
                       <div class="form-image">
                           <%= image_tag @game.team.image, class: 'team-image' if @game.team.image.attached? %>
                       </div>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">タイトル:</label>
-                      <span class="indispensable"><%= @game.title %></span>
+                  <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">タイトル:</label>
+                      <span class="game-show-indispensable"><%= @game.title %></span>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">チーム名:</label>
-                      <span class="indispensable"><%=link_to @game.team.team_name, team_main_path(@game.team_id) %></span>
+                  <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">チーム名:</label>
+                      <span class="game-show-indispensable"><%=link_to @game.team.team_name, team_main_path(@game.team_id) %></span>
                   </div>
 
                   <div class='form-text-wrap'>
                       <label class="form-text">代表者:</label>
-                      <span class="indispensable"><%= @game.user.nickname %></span>
+                      <span class="game-show-indispensable"><%= @game.user.nickname %></span>
                   </div>
 
-                  <div class='form-text-wrap'>
-                      <label class="form-text">活動エリア:</label>
-                      <span class="indispensable"><%= @game.team.area.name %></span>
+                  <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">活動エリア:</label>
+                      <span class="game-show-indispensable"><%= @game.team.area.name %></span>
                   </div>
 
-                   <div class='form-text-wrap'>
-                      <label class="form-text">場所:</label>
-                      <span class="indispensable"><%= @game.place %></span>
+                   <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">場所:</label>
+                      <span class="game-show-indispensable"><%= @game.place %></span>
                   </div>
 
-                   <div class='form-text-wrap'>
-                      <label class="form-text">日付:</label>
-                      <span class="indispensable"><%= "日付: #{@game.start_time.year}年#{@game.start_time.month}月#{@game.start_time.day}日" %></span>
+                   <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">日付:</label>
+                      <span class="game-show-indispensable"><%= "日付: #{@game.start_time.year}年#{@game.start_time.month}月#{@game.start_time.day}日" %></span>
                   </div>
 
-                   <div class='form-text-wrap'>
-                      <label class="form-text">時間:</label>
-                      <span class="indispensable"><%= "時間: #{@game.start_time.hour}時#{@game.start_time.min}分〜#{@game.end_time.hour}時#{@game.end_time.min}分" %></span>
+                   <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">時間:</label>
+                      <span class="game-show-indispensable"><%= "時間: #{@game.start_time.hour}時#{@game.start_time.min}分〜#{@game.end_time.hour}時#{@game.end_time.min}分" %></span>
                   </div>
 
-                    <div class='form-text-wrap'>
-                      <label class="form-text">詳細:</label>
-                      <span class="indispensable"><%= @game.content %></span>
+                    <div class='game-show-form-text-wrap'>
+                      <label class="game-show-form-text">詳細:</label>
+                      <span class="game-show-indispensable"><%= @game.content %></span>
                   </div>
 
                   <div class="container">

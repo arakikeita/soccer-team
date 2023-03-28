@@ -1,36 +1,36 @@
+/*-----------------------------------------------
+ここから PC用
+-------------------------------------------------*/
 
 
-
-.mains {
+.game-show-main {
   width: 100%;
-  min-width: 800px;
   height: 100%;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
-.form-wrap {
+.game-show-form-wrap {
   width: 50vw;
   background-color: white;
   padding-bottom: 70px;
 }
 
-.form-header {
+.game-show-form-header {
   width: 100%;
   height: 120px;
   text-align: center;
   font-size: 22px;
 }
 
-.form-header-text {
+.game-show-form-header-text {
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
 }
 
-.form-group {
+.game-show-form-group {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -38,11 +38,11 @@
   padding-top: 20px;
 }
 
-.form-group:first-child {
+.game-show-form-group:first-child {
   padding: 0;
 }
 
-.form-text-wrap {
+.game-show-form-text-wrap {
   width: 100%;
   height: 20%;
   margin-top:10px;
@@ -61,12 +61,12 @@
 
 
 
-.form-text {
+.game-show-form-text {
   font-size: 14px;
   font-weight: bold;
 }
 
-.indispensable a{
+.game-show-indispensable a{
   text-decoration: none;
   color:#333;
   font-weight:bold;
@@ -93,6 +93,48 @@
   margin-bottom:5px;
 }
 
+/*-----------------------------------------------
+ここまで PC用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから タブレット用
+-------------------------------------------------*/
+@media (max-width: 1024px) {
+
+  .game-show-main{
+    width: 100vw;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-show-form-wrap {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 70px;
+  }
+
+}
+
+/*-----------------------------------------------
+ここまで タブレット用
+-------------------------------------------------*/
+
+
+/*-----------------------------------------------
+ここから スマフォ用
+-------------------------------------------------*/
+
+@media (max-width: 599px) {
+
+
+
+
+
+
 
 
 
@@ -101,3 +143,12 @@
 
 
   
+  
+}
+
+
+
+  
+/*-----------------------------------------------
+ここまで スマフォ用
+-------------------------------------------------*/
