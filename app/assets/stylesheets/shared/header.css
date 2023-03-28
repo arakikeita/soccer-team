@@ -18,6 +18,7 @@
 h1 a{
   text-decoration: none;
   color:#333333;
+  font-size: 30px;
 
 }
 
@@ -32,6 +33,7 @@ h1 a{
   line-height: 32px;
   margin:0 1vw  0 2vw ; 
   color: #333333;
+  
 }
 
 .b{
@@ -75,9 +77,10 @@ h1 a{
 ----------------------------*/
 @media (max-width: 1024px) {
   .c{
-    width:50vw;
+    width:100%;
     display: flex;
     justify-content:space-between;
+    margin:0 4vw;
   }
 
 
@@ -98,7 +101,11 @@ h1 a{
 ここから スマフォ用(画面幅が599px以下の場合)
 ----------------------------*/
 @media (max-width: 599px) {
-  
+  .c{
+    width:100vw;
+    display: flex;
+    justify-content:space-between;
+  }
 
 
 
