@@ -1,10 +1,10 @@
 
 
-<%= form_with model:  @calender,  class: 'registration-main',local: true do |f| %>
-  <div class='form-wrap'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
-        スケジュール編集
+<%= form_with model:  @calender, url: calenders_path, class: 'calender-new-main',local: true do |f| %>
+  <div class='calender-new-form-wrap'>
+    <div class='calender-new-form-header'>
+      <h1 class='calender-new-form-header-text'>
+        スケジュール作成
       </h1>
     </div>
 
@@ -18,8 +18,8 @@
 
 
 
-    <div class="form-group">
-        <div class='form-text-wrap'>
+    <div class="calender-new-form-group">
+        <div class='calender-new-form-text-wrap'>
           <select name="team_id">
               <option value="">チームを選択してください</option> 
               <% Team.where(user_id: current_user.id).each do |team| %>
@@ -28,41 +28,41 @@
             </select>
         </div>
 
-        <div class='form-text-wrap'>
-          <label class="form-text">タイトル</label>
+        <div class='calender-new-form-text-wrap'>
+          <label class="calender-new-form-text">タイトル</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :title, class:"input-default", id:"team_name", placeholder:"", autofocus: true %>
+        <%= f.text_field :title, class:"calender-new-input-default", id:"team_name", placeholder:"", autofocus: true %>
    
-        <div class='form-text-wrap'>
-          <label class="form-text">詳細</label>
+        <div class='calender-new-form-text-wrap'>
+          <label class="calender-new-form-text">詳細</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :content , class:"input-default", id:"introduction", placeholder:"", autofocus: true %>
+        <%= f.text_area :content , class:"calender-new-input-default", id:"introduction", placeholder:"", autofocus: true %>
     </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-            <label class="form-text">開始時間</label>
+    <div class="calender-new-form-group">
+      <div class='calender-new-form-text-wrap'>
+            <label class="calender-new-form-text">開始時間</label>
             <span class="indispensable">必須</span>
       </div>
     </div>
-    <div class='form-time'>
-        <%= f.datetime_select :start_time, class:"input-default", id:"name", placeholder:"" %>
+    <div class='calender-new-form-time'>
+        <%= f.datetime_select :start_time, class:"calender-new-input-default", id:"name", placeholder:"" %>
     </div>
 
-      <div class="form-group">
-      <div class='form-text-wrap'>
-            <label class="form-text">終了時間</label>
+      <div class="calender-new-form-group">
+      <div class='calender-new-form-text-wrap'>
+            <label class="calender-new-form-text">終了時間</label>
             <span class="indispensable">必須</span>
       </div>
     </div>
-    <div class='form-time'>
-        <%= f.datetime_select :end_time, class:"input-default", id:"name", placeholder:"" %>
+    <div class='calender-new-form-time'>
+        <%= f.datetime_select :end_time, class:"calender-new-input-default", id:"name", placeholder:"" %>
     </div>
 
     
     <div class='login-btn'>
-      <%= f.submit "スケジュール更新" ,class:"login-red-btn" %>
+      <%= f.submit "スケジュール作成" ,class:"login-red-btn" %>
     </div>
   </div>
 
