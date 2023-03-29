@@ -19,6 +19,7 @@
   width:50vw;
   height:100%;
   background-color: #ffffff;
+
 }
 
 
@@ -26,15 +27,16 @@
 .title{
   
   width:100%;
-  height:50px;
+  height:120px;
   margin:0 auto;
   color:#333333; 
-  margin-bottom:5px;
+  margin-bottom:10px;
+  font-size:22px;
 }
 .title2{
-  line-height: 50px;
+  line-height: 100px;
   text-align: center;
-  font-size:30px;
+
   font-weight:bold;
   
 }
@@ -153,7 +155,15 @@
     list-style: none;
     border-radius: 5px;
   }
-
+  .title{
+  
+    width:100%;
+    height:120px;
+    margin:0 auto;
+    color:#333333; 
+    margin-bottom:10px;
+    font-size:15px;
+  }
 
 
 

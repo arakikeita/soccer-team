@@ -8,6 +8,27 @@
         <% if user_signed_in? %>
           <li class="a"><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li> 
           <li class="d"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>  
+
+          <div class="hamburger-menu">
+              <input type="checkbox" id="menu-btn-check">
+              <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <!--ここからメニュー-->
+              <div class="menu-content">
+                  <ul>
+                      <li>
+                          <%= link_to 'チーム新規作成', new_team_path, class: "logout" %>
+                      </li>
+                      <li>
+                          <%= link_to '練習試合応募', games_path ,class: "logout" %>
+                      </li>
+                  </ul>
+              </div>
+              <!--ここまでメニュー-->
+          </div>
+
+
+
+
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
           <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
@@ -17,22 +38,7 @@
     </div>
 
 
-    <div class="hamburger-menu">
-        <input type="checkbox" id="menu-btn-check">
-        <label for="menu-btn-check" class="menu-btn"><span></span></label>
-       <!--ここからメニュー-->
-        <div class="menu-content">
-            <ul>
-                <li>
-                    <%= link_to 'チーム新規作成', new_team_path, class: "logout" %>
-                </li>
-                <li>
-                    <%= link_to '練習試合応募', games_path ,class: "logout" %>
-                </li>
-            </ul>
-        </div>
-        <!--ここまでメニュー-->
-    </div>
+    
 
 
 </header>
