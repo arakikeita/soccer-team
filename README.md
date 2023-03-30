@@ -77,6 +77,53 @@ https://soccer-team.onrender.com
 
 
 # 　実装した機能についての画像やGIFおよびその説明  
+トップページ未ログイン
+[![Image from Gyazo](https://i.gyazo.com/e7162dd039f3e56abbd741b1e45db70f.png)](https://gyazo.com/e7162dd039f3e56abbd741b1e45db70f)  
+
+トップページログイン時
+[![Image from Gyazo](https://i.gyazo.com/5c3c23a235ce084c5307fe6580452b08.png)](https://gyazo.com/5c3c23a235ce084c5307fe6580452b08)
+
+トップページログイン時チーム未登録
+
+
+新規登録
+[![Image from Gyazo](https://i.gyazo.com/98dcc43aadb8f6287bad704c21095718.gif)](https://gyazo.com/98dcc43aadb8f6287bad704c21095718)
+
+ログイン
+[![Image from Gyazo](https://i.gyazo.com/46070452d952ac9877f03187493c8036.gif)](https://gyazo.com/46070452d952ac9877f03187493c8036)
+
+マイページ
+[![Image from Gyazo](https://i.gyazo.com/e226f2325030351ba81af7eefac80c1e.gif)](https://gyazo.com/e226f2325030351ba81af7eefac80c1e)
+
+チーム作成
+[![Image from Gyazo](https://i.gyazo.com/d02850a0999498ea4ffac4d669dadc4e.gif)](https://gyazo.com/d02850a0999498ea4ffac4d669dadc4e)
+
+
+チーム参加申込、取消
+[![Image from Gyazo](https://i.gyazo.com/c711613a2fad7b5b7300567052bdf660.gif)](https://gyazo.com/c711613a2fad7b5b7300567052bdf660)
+
+チーム参加承認否認機能
+[![Image from Gyazo](https://i.gyazo.com/e74684b896dce4fb38b163ad16fbf54a.gif)](https://gyazo.com/e74684b896dce4fb38b163ad16fbf54a)
+
+チームページ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #  実装予定の機能  
