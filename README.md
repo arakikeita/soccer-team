@@ -76,7 +76,7 @@ https://soccer-team.onrender.com
 
 
 
-# 　実装した機能についての画像やGIFおよびその説明  
+# 実装した機能についての画像やGIFおよびその説明  
 トップページ未ログイン
 [![Image from Gyazo](https://i.gyazo.com/e7162dd039f3e56abbd741b1e45db70f.png)](https://gyazo.com/e7162dd039f3e56abbd741b1e45db70f)  
 
