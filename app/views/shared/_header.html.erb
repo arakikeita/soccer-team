@@ -6,6 +6,8 @@
       <ul class='lists-right'>
         
         <% if user_signed_in? %>
+           <li class="b"><%= link_to 'チーム新規作成', new_team_path, class: "logout" %></li>
+          <li class="b"><%= link_to '練習試合応募一覧', games_path ,class: "logout" %></li>
           <li class="a"><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li> 
           <li class="d"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>  
 
