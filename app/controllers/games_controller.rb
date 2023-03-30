@@ -42,8 +42,8 @@ class GamesController < ApplicationController
 
 
   def destroy
-    
-    @game.delete
+
+    @game.destroy
     redirect_to action: :index
   end
 
