@@ -239,7 +239,7 @@ https://soccer-team.onrender.com
 | ----------  | ---------   | -------------- |
 | nickname    | string      | null: false    |
 | email       | string      | null: false, unique:true | ユニーク制約
-| encrypted_password  | string    | null: false    | 
+| encrypted_password  | string    | null: false      | 
 | surname     | string      | null: false    |
 | name        | string      | null: false    |
 | surnamek    | string      | null: false    |
