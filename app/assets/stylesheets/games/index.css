@@ -127,7 +127,7 @@
 ここから タブレット用  ブレークポイント1024px
 ----------------------------*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
   .game-index-form-wrap {
     width: 100%;
     background-color: white;

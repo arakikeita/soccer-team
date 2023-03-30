@@ -216,7 +216,7 @@
 ここから タブレット用
 -------------------------------------------------*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .registration-main1 {
     width: 100vw;
     height: 100%;
