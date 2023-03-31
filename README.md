@@ -17,10 +17,11 @@ https://soccer-team.onrender.com
 
 
 # テスト用アカウント  
-
   Basic認証パスワード :2222</br>
   Basic認証ID       :admin
 
+  mail  a@a
+  PASS  111aaa
 
 # 利用方法　  
 
@@ -132,27 +133,6 @@ https://soccer-team.onrender.com
 
 練習試合募集検索機能
 [![Image from Gyazo](https://i.gyazo.com/8cd415a2c34017942631dde537bf4eaf.gif)](https://gyazo.com/8cd415a2c34017942631dde537bf4eaf)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
