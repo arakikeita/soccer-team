@@ -19,7 +19,7 @@
                             <div class="e"><%= link_to "チーム名: #{team.team_name}", team_path(team) %></div>
                           </div>
                           <div class='item-price'>
-                            <div class="e"><%= "所属人数: #{team.users.count}人" %></div>
+                            <div class="e"><%= "所属人数: #{team.users.count + 1}人" %></div>
                           </div>
                       </div>
                     <% end %>
